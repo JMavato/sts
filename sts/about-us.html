@@ -1,0 +1,701 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Simple Tech Services PNG</title>
+    <meta name="description" content="Learn more about Simple Tech Services, a 100% Papua New Guinea-owned technology company established in 2019. Discover our journey, vision, mission and core values.">
+
+    <link rel="stylesheet" href="style.css?v=1.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* PAGE HEADER */
+        .page-header-section {
+            background-color: var(--light-bg);
+            border-bottom: 1px solid #E2E8F0;
+            padding: 40px 0;
+        }
+
+        .page-header-section h1 {
+            font-size: 2.4rem;
+            color: var(--primary-blue);
+            margin-top: 10px;
+        }
+
+        /* COMPANY HISTORY */
+        .detailed-about-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 50px;
+        }
+
+        .narrative-text {
+            flex: 1;
+        }
+
+        .narrative-text h2 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .narrative-text h3 {
+            color: var(--secondary-blue);
+            margin: 30px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        .narrative-text p {
+            margin-bottom: 15px;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        /* COMPANY PROFILE */
+        .corporate-spec-card {
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-top: 4px solid var(--kumul-gold);
+            min-width: 320px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .corporate-spec-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #CBD5E1;
+            padding-bottom: 10px;
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .spec-list li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        /* VISION, MISSION & CORE VALUES SECTION */
+        .purpose-section {
+            background: #F1F5F9;
+            padding: 65px 0 70px;
+        }
+
+        .purpose-header {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .purpose-eyebrow {
+            display: block;
+            color: #328CC1;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 17px;
+        }
+
+        .purpose-header h2 {
+            color: #173F63;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .purpose-accent {
+            width: 48px;
+            height: 4px;
+            background: #D9B310;
+            margin: 0 auto 22px;
+        }
+
+        .purpose-header p {
+            color: #64748B;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0 auto;
+            max-width: 750px;
+        }
+
+        .purpose-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .purpose-card {
+            background: #FFFFFF;
+            border-radius: 9px;
+            padding: 36px 28px 30px;
+            min-height: 335px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+            border-top: 4px solid #173F63;
+        }
+
+        .purpose-card.mission-card {
+            border-top-color: #D9B310;
+        }
+
+        .purpose-card.values-card {
+            border-top-color: #328CC1;
+        }
+
+        .purpose-icon {
+            font-size: 1.7rem;
+            margin-bottom: 26px;
+            color: #173F63;
+        }
+
+        .mission-card .purpose-icon {
+            color: #C18A0B;
+        }
+
+        .values-card .purpose-icon {
+            color: #328CC1;
+        }
+
+        .purpose-label {
+            display: block;
+            color: #52677E;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .purpose-card h3 {
+            color: #173F63;
+            font-size: 1.08rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .purpose-card p {
+            color: #52677E;
+            font-size: 0.9rem;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        .purpose-values-list {
+            padding-left: 19px;
+            margin: 0;
+            color: #52677E;
+        }
+
+        .purpose-values-list li {
+            padding-left: 0;
+            margin-bottom: 9px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* CONTACT SECTION */
+        .about-contact-section {
+            padding: 60px 0;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .purpose-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .purpose-card.values-card {
+                grid-column: 1 / -1;
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .detailed-about-container {
+                flex-direction: column;
+            }
+
+            .corporate-spec-card {
+                width: 100%;
+                min-width: unset;
+            }
+
+            .purpose-section {
+                padding: 50px 0;
+            }
+
+            .purpose-header h2 {
+                font-size: 1.55rem;
+            }
+
+            .purpose-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .purpose-card.values-card {
+                grid-column: auto;
+            }
+
+            .purpose-card {
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header-section h1 {
+                font-size: 1.9rem;
+            }
+
+            .purpose-card {
+                padding: 30px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER / UNIVERSAL NAVIGATION -->
+<header class="navbar">
+    <div class="container nav-container">
+
+        <div class="logo">
+            <a href="index.html" style="display:flex; align-items:center;">
+                <img src="sts-logo.png"
+                     alt="Simple Tech Services Logo"
+                     class="nav-logo-img">
+            </a>
+        </div>
+
+        <div class="logo">
+            Simple<span class="text-gold">Tech</span>Services
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html" class="active">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#why-choose-us">Why Choose Us</a>
+            <a href="testimonials.html">Our Team</a>
+            <a href="shop.html">Store</a>
+            <a href="index.html#contact" class="btn-nav">Get a Quote</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- PAGE HEADER -->
+<section class="page-header-section">
+    <div class="container">
+        <span class="small-heading">WHO WE ARE</span>
+        <h1>Our Journey & Commitment</h1>
+        <div class="accent-line-left"></div>
+    </div>
+</section>
+
+
+<!-- COMPANY HISTORY AND PROFILE -->
+<section class="content-block-section"
+         style="background-color:var(--white); padding:60px 0;">
+
+    <div class="container detailed-about-container">
+
+        <!-- COMPANY STORY -->
+        <div class="narrative-text">
+
+            <h2>Welcome to Simple Tech Services</h2>
+
+            <p>
+                Simple Tech Services is a 100% Papua New Guinea-owned
+                technology company established in 2019 by Mr. Pau Ukuma
+                and officially registered with the Investment Promotion
+                Authority (IPA) in 2020. Based in Port Moresby, Papua New Guinea.
+            </p>
+
+            <p>
+                We provide professional IT support, computer repairs, networking solutions,
+				website development, printing services, and digital business solutions to individuals,
+				small businesses, and organisations throughout Papua New Guinea.
+            </p>
+
+            <h3>Overcoming Challenges & Relocation</h3>
+
+            <p>
+                Like many businesses, we were affected by the COVID-19 pandemic. 
+				Our operations were placed on hold, and our relocation from Popondetta 
+				to Port Moresby took longer than expected.
+            </p>
+
+            <p>
+                Following our transition to Port Moresby, Simple Tech Services expanded
+				its service portfolio and strengthened its technical capabilities to better 
+				serve clients throughout Papua New Guinea.
+            </p>
+
+            <p>
+                Whether you need a quick repair, professional printing,
+                or a new website for your business, we are ready to help.
+                Thank you for trusting a local PNG business.
+            </p>
+
+        </div>
+
+
+        <!-- COMPANY PROFILE -->
+        <div class="corporate-spec-card">
+
+            <h3>Company Profile</h3>
+
+            <ul class="spec-list">
+                <li><strong>Founded:</strong> 2019</li>
+                <li><strong>Founder & Managing Director:</strong> Mr. Pau Ukuma</li>
+                <li><strong>IPA Registeration:</strong> Registered in 2020</li>
+                <li><strong>Ownership Structure:</strong> 100% Papua New Guinea Owned</li>
+                <li><strong>Head Office:</strong> Port Moresby, National Captial District</li>
+				 <li><strong>Service Coverage:</strong> Papua New Guinea Nationwide</li>
+            </ul>
+
+            <a href="index.html#contact"
+               class="btn btn-primary btn-block"
+               style="text-align:center; margin-top:25px;">
+                Work With Us
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- VISION, MISSION & CORE VALUES -->
+<section class="purpose-section">
+
+    <div class="container">
+
+        <!-- SECTION HEADING -->
+        <div class="purpose-header">
+
+            <span class="purpose-eyebrow">
+                OUR PURPOSE &amp; PRINCIPLES
+            </span>
+
+            <h2>Our Vision, Mission &amp; Core Values</h2>
+
+            <div class="purpose-accent"></div>
+
+            <p>
+                Our commitment to professional ICT services,
+                innovation and client satisfaction.
+            </p>
+
+        </div>
+
+
+        <!-- THREE CORPORATE CARDS -->
+        <div class="purpose-grid">
+
+            <!-- VISION CARD -->
+            <div class="purpose-card vision-card">
+
+                <div class="purpose-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+
+                <span class="purpose-label">OUR VISION</span>
+
+                <h3>Professional &amp; Affordable ICT Services</h3>
+
+                <p>
+                    To become Papua New Guinea's most trusted technology
+					services provider through excellence, integrity, and customer-focused support.
+                </p>
+
+            </div>
+
+
+            <!-- MISSION CARD -->
+            <div class="purpose-card mission-card">
+
+                <div class="purpose-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+
+                <span class="purpose-label">OUR MISSION</span>
+
+                <h3>Making Technology Simple for All</h3>
+
+                <p>
+                    To provide reliable, affordable, 
+					and innovative technology solutions that
+					help businesses and communities across Papua New Guinea succeed.
+                </p>
+
+            </div>
+
+
+            <!-- CORE VALUES CARD -->
+            <div class="purpose-card values-card">
+
+                <div class="purpose-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+
+                <span class="purpose-label">OUR CORE VALUES</span>
+
+                <h3>Principles That Guide Us</h3>
+
+                <ul class="purpose-values-list">
+                    <li>Integrity</li>
+                    <li>Innovation</li>
+                    <li>Client Priority</li>
+                    <li>Continuous Development</li>
+                    <li>Meeting Deadlines</li>
+                    <li>Teamwork</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT US SECTION -->
+<section class="about-contact-section">
+
+    <div class="container">
+
+        <span class="small-heading">GET IN TOUCH</span>
+
+        <h2>Contact Simple Tech Services</h2>
+
+        <p class="about-contact-intro">
+            Have a question, need technical support, or looking for
+            professional IT services? Our team is ready to assist.
+            Contact us through the details below or visit our office.
+        </p>
+
+
+        <div class="about-contact-grid">
+
+            <!-- OFFICE ADDRESS -->
+            <div class="about-contact-card">
+
+                <h3>
+                    <i class="fas fa-map-marker-alt"></i>
+                    Office Address
+                </h3>
+
+                <p>
+                    Suite 27, Jub Business Centre,<br>
+                    Frangipani Street, Hohola,<br>
+                    National Capital District,<br>
+                    Papua New Guinea.
+                </p>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=Jub+Business+Centre+Frangipani+Street+Hohola+Port+Moresby"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View Office Location on Google Maps
+                </a>
+
+            </div>
+
+
+            <!-- PHONE AND WHATSAPP -->
+            <div class="about-contact-card">
+
+                <h3>
+                    <i class="fas fa-phone-alt"></i>
+                    Phone &amp; WhatsApp
+                </h3>
+
+                <p>Speak directly with our team.</p>
+
+                <a href="tel:+67574348744">
+                    +675 7434 8744
+                </a>
+
+                <br>
+
+                <a href="https://wa.me/67574348744"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Chat with us on WhatsApp
+                </a>
+
+            </div>
+
+
+            <!-- EMAIL -->
+            <div class="about-contact-card">
+
+                <h3>
+                    <i class="fas fa-envelope"></i>
+                    Email Address
+                </h3>
+
+                <p>
+                    Send us your enquiries, service requests
+                    and business proposals.
+                </p>
+
+                <a href="mailto:Simpletechservices01@gmail.com">
+                    Simpletechservices01@gmail.com
+                </a>
+
+            </div>
+
+
+            <!-- POSTAL ADDRESS -->
+            <div class="about-contact-card">
+
+                <h3>
+                    <i class="fas fa-mail-bulk"></i>
+                    Postal Address
+                </h3>
+
+                <p>
+                    P.O. Box 2663,<br>
+                    Vision City,<br>
+                    National Capital District,<br>
+                    Papua New Guinea.
+                </p>
+
+            </div>
+
+
+            <!-- FACEBOOK -->
+            <div class="about-contact-card">
+
+                <h3>
+                    <i class="fab fa-facebook"></i>
+                    Facebook
+                </h3>
+
+                <p>
+                    Follow our official business page for
+                    updates, services and announcements.
+                </p>
+
+                <a href="https://www.facebook.com/people/Simple-Tech-Service/100063812241906/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Visit Our Facebook Page
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT CALL TO ACTION -->
+        <div class="about-contact-cta">
+
+            <a href="index.html#contact"
+               class="btn btn-primary">
+                Request a Service or Quote
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="main-footer">
+
+    <div class="footer-bottom">
+
+        <p>
+            &copy; 2026 Simple Tech Services PNG. All Rights Reserved.
+        </p>
+
+        <p class="developer-credit">
+            Designed &amp; Developed by
+            <a href="#" target="_blank" rel="noopener noreferrer">
+                Niugini Tech
+            </a>
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- FLOATING SOCIAL MEDIA MENU -->
+<div class="floating-social-menu">
+
+    <div class="social-options" id="socialOptions">
+
+        <!-- WHATSAPP -->
+        <a href="https://wa.me/67574348744"
+           class="social-link whatsapp-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="WhatsApp">
+
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+
+        </a>
+
+
+        <!-- FACEBOOK -->
+        <a href="https://www.facebook.com/people/Simple-Tech-Service/100063812241906/"
+           class="social-link facebook-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Facebook">
+
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+
+        </a>
+
+
+        <!-- TIKTOK -->
+        <a href="https://www.tiktok.com/@simple.tech62?_r=1&_t=ZS-9BA2haCKew6"
+           class="social-link tiktok-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="TikTok">
+
+            <i class="fab fa-tiktok"></i>
+            <span>TikTok</span>
+
+        </a>
+
+    </div>
+
+
+    <button type="button"
+            class="social-toggle"
+            id="socialToggle"
+            aria-label="Open social media links"
+            aria-expanded="false">
+
+        <i class="fas fa-share-alt"></i>
+
+    </button>
+
+</div>
+
+
+<!-- WEBSITE JAVASCRIPT -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

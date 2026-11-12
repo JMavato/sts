@@ -1,0 +1,1119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Team | Simple Tech Services PNG</title>
+
+    <meta name="description" content="Meet the team behind Simple Tech Services PNG. Discover our management, technical experience, qualifications and professional capabilities.">
+
+    <link rel="stylesheet" href="style.css?v=1.8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* =====================================
+           TEAM PAGE FOUNDATION
+        ===================================== */
+
+        .team-page-bg {
+            background: #f4f7f9;
+            padding: 60px 0;
+        }
+
+        .team-intro {
+            max-width: 850px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .team-intro h2 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .team-intro p {
+            color: #52677e;
+            line-height: 1.8;
+        }
+
+        /* =====================================
+           TEAM PROFILE GRID
+        ===================================== */
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+            align-items: stretch;
+            margin-bottom: 20px;
+        }
+
+        .team-card {
+            background: #ffffff;
+            border-top: 5px solid var(--secondary-blue);
+            padding: 35px 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            transition: 0.3s ease;
+        }
+
+        .team-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .team-avatar-placeholder {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eaf4fb;
+            border: 3px solid #d5e6f2;
+            color: var(--primary-blue);
+            font-size: 2rem;
+            font-weight: 800;
+            overflow: hidden;
+        }
+
+        .team-avatar-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .team-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark-charcoal);
+            margin-bottom: 7px;
+        }
+
+        .team-role {
+            display: block;
+            color: var(--secondary-blue);
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .team-bio {
+            color: #52677e;
+            font-size: 0.94rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* =====================================
+           LINKEDIN PROFILE
+        ===================================== */
+
+        .team-linkedin {
+            margin: 0 0 20px;
+        }
+
+        .team-linkedin a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #0a66c2;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .team-linkedin a:hover {
+            text-decoration: underline;
+        }
+
+        /* =====================================
+           TEAM RESPONSIBILITIES
+        ===================================== */
+
+        .team-focus {
+            background: #f5f8fa;
+            padding: 18px;
+            text-align: left;
+            border-radius: 5px;
+            margin-bottom: 18px;
+        }
+
+        .team-focus strong {
+            display: block;
+            color: var(--primary-blue);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .team-focus ul,
+        .team-qualifications ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .team-focus li,
+        .team-qualifications li {
+            font-size: 0.84rem;
+            color: #52677e;
+            margin-bottom: 9px;
+            line-height: 1.6;
+        }
+
+        .team-focus li i,
+        .team-qualifications li i {
+            color: var(--secondary-blue);
+            margin-right: 8px;
+        }
+
+        /* =====================================
+           QUALIFICATIONS
+        ===================================== */
+
+        .team-qualifications {
+            background: #eef5f9;
+            border-left: 3px solid var(--secondary-blue);
+            padding: 20px;
+            text-align: left;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+
+        .team-qualifications h4 {
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+            margin: 0 0 13px;
+        }
+
+        .team-qualifications h4:not(:first-child) {
+            margin-top: 20px;
+        }
+
+        .team-qualifications li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =====================================
+           TRUST SECTION
+        ===================================== */
+
+        .trust-section {
+            background: #ffffff;
+            padding: 65px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .section-heading p {
+            color: #64748b;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .trust-card {
+            padding: 28px 22px;
+            background: #f5f8fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+        }
+
+        .trust-card i {
+            color: var(--secondary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .trust-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+        }
+
+        .trust-card p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* =====================================
+           TECHNOLOGY NEWS
+        ===================================== */
+
+        .corporate-reviews-section {
+            background: #f4f7f9;
+            padding: 65px 0;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: #ffffff;
+            padding: 35px;
+            border-left: 4px solid var(--kumul-gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+        }
+
+        .blog-icon {
+            color: var(--secondary-blue);
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .review-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .review-card p {
+            color: #52677e;
+            font-size: 0.94rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .blog-update {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+            margin-top: 20px;
+        }
+
+        .blog-update strong {
+            display: block;
+            color: var(--primary-blue);
+            font-size: 0.9rem;
+        }
+
+        .blog-update span {
+            color: #64748b;
+            font-size: 0.82rem;
+        }
+
+        /* =====================================
+           CONTACT CTA
+        ===================================== */
+
+        .team-final-cta {
+            background: var(--primary-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .team-final-cta h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .team-final-cta p {
+            max-width: 720px;
+            margin: 0 auto 25px;
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+
+        .team-final-cta a {
+            display: inline-block;
+            padding: 14px 26px;
+            background: var(--kumul-gold);
+            color: #172b3a;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.3s ease;
+        }
+
+        .team-final-cta a:hover {
+            opacity: 0.88;
+            transform: translateY(-2px);
+        }
+
+        /* =====================================
+           RESPONSIVE LAYOUT
+        ===================================== */
+
+        @media (max-width: 1024px) {
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-grid,
+            .reviews-grid,
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .team-card,
+            .review-card {
+                padding: 28px 22px;
+            }
+
+            .team-intro h2,
+            .section-heading h2,
+            .team-final-cta h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .team-card,
+            .team-final-cta a {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================
+     HEADER / NAVIGATION
+===================================== -->
+
+<header class="navbar">
+    <div class="container nav-container">
+
+        <div class="logo">
+            <a href="index.html" style="display:flex; align-items:center;">
+                <img src="sts-logo.png"
+                     alt="Simple Tech Services Logo"
+                     class="nav-logo-img">
+            </a>
+        </div>
+
+        <div class="logo">
+            Simple<span class="text-gold">Tech</span>Services
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#why-choose-us">Why Choose Us</a>
+            <a href="testimonials.html" class="active">Our Team</a>
+            <a href="shop.html">Store</a>
+            <a href="index.html#contact" class="btn-nav">Get a Quote</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =====================================
+     PAGE HEADER
+===================================== -->
+
+<section class="page-header-section"
+         style="background-color:#eaf4fb; border-bottom:1px solid #E2E8F0; padding:35px 0;">
+
+    <div class="container">
+
+        <span class="small-heading">PEOPLE BEHIND THE SERVICE</span>
+
+        <h1 style="font-size:2.4rem; color:var(--primary-blue); margin-top:10px;">
+            Our Team
+        </h1>
+
+        <div class="accent-line-left"></div>
+
+    </div>
+</section>
+
+
+<!-- =====================================
+     TEAM PROFILES
+===================================== -->
+
+<section class="team-page-bg">
+
+    <div class="container">
+
+        <div class="team-intro">
+
+            <h2>Meet the People Behind Simple Tech Services</h2>
+
+            <p>
+                Our team combines leadership, technical expertise, 
+				customer support and operational excellence to deliver 
+				reliable, affordable and practical technology solutions
+				across Papua New Guinea. We are committed to helping businesses 
+				and individuals stay connected, productive and secure through professional IT services and support.
+            </p>
+
+        </div>
+
+        <div class="team-grid">
+
+            <!-- =====================================
+                 MEMBER 1: MANAGING DIRECTOR
+            ===================================== -->
+
+            <div class="team-card">
+
+                <div class="team-avatar-placeholder">
+                    <img src="team-image/pau-ukuma.png"
+                         alt="Mr. Pau Ukuma"
+                         loading="lazy">
+                </div>
+
+                <h3>Mr. Pau Ukuma</h3>
+
+                <span class="team-role">Managing Director</span>
+
+                <p class="team-bio">
+                    Founder of Simple Tech Services, established in 2019.
+                    Pau leads the company's business direction, operational
+                    management and customer service strategy, with a focus
+                    on providing practical and affordable technology
+                    solutions in Papua New Guinea.
+                </p>
+
+                <!-- Add verified LinkedIn URL in href when available -->
+                <div class="team-linkedin">
+                    <a href="https://www.linkedin.com/in/pau-ukuma-666a58284/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    </a>
+                </div>
+
+                <div class="team-focus">
+                    <strong>Leadership Focus</strong>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i>Business strategy and direction</li>
+                        <li><i class="fas fa-check-circle"></i>Operational management</li>
+                        <li><i class="fas fa-check-circle"></i>Customer and partner relationships</li>
+                        <li><i class="fas fa-check-circle"></i>Service development</li>
+                    </ul>
+                </div>
+
+                <details class="team-experience">
+
+                    <summary>
+                        <span>
+                            <i class="fas fa-briefcase"></i>
+                            Professional Experience
+                        </span>
+                        <span class="experience-toggle"></span>
+                    </summary>
+
+                    <div class="team-experience-content">
+
+                        <p>
+                            Founded Simple Tech Services in 2019 and has led
+                            the development of the business, overseeing its
+                            operations, service delivery and customer
+                            relationships.
+                        </p>
+
+                        <ul>
+                            <li>Business establishment and development</li>
+                            <li>Business and operational leadership</li>
+                            <li>Customer and partner relationship management</li>
+                            <li>Technology service development</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="team-qualifications">
+
+                        <h4><i class="fas fa-graduation-cap"></i> Academic Qualifications</h4>
+
+                        <ul>
+                            <li>
+                                <i class="fas fa-award"></i>
+                                Bachelor of Business and Management in Public Policy
+                            </li>
+
+                            <li>
+                                <i class="fas fa-award"></i>
+                                Diploma in Accounting –
+                                International Training Institute (ITI)
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </details>
+
+            </div>
+
+
+            <!-- =====================================
+                 MEMBER 2: INFRASTRUCTURE & ENGINEERING
+            ===================================== -->
+
+            <div class="team-card">
+
+                <div class="team-avatar-placeholder">
+                    <img src="team-image/team-tech-lead.png"
+                         alt="Mr. Jeremy Markus"
+                         loading="lazy">
+                </div>
+
+                <h3>Mr. Jeremy Markus</h3>
+
+                <span class="team-role">Infrastructure &amp; Engineering</span>
+
+                <p class="team-bio">
+                    Supports technical service delivery, infrastructure deployment,
+					network operations, troubleshooting and field support activities.
+					Focused on delivering reliable connectivity, equipment installation
+					and technical solutions for businesses throughout Papua New Guinea.
+                </p>
+
+                <!-- Add verified LinkedIn URL in href when available -->
+                <div class="team-linkedin">
+                    <a href="https://www.linkedin.com/in/jeremy-markus-924868bb/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    </a>
+                </div>
+
+                <div class="team-focus">
+
+                    <strong>Technical Capability Areas</strong>
+
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i>Network installation and troubleshooting</li>
+                        <li><i class="fas fa-check-circle"></i>Fiber and connectivity services</li>
+                        <li><i class="fas fa-check-circle"></i>CCTV and surveillance systems</li>
+                        <li><i class="fas fa-check-circle"></i>Server and infrastructure support</li>
+                    </ul>
+
+                </div>
+
+                <details class="team-experience">
+
+                    <summary>
+                        <span>
+                            <i class="fas fa-briefcase"></i>
+                            Professional Experience
+                        </span>
+                        <span class="experience-toggle"></span>
+                    </summary>
+
+                    <div class="team-experience-content">
+
+                        <p>
+                            Brings over four years of experience in ICT and
+                            telecommunications, with practical exposure to
+                            network operations, infrastructure support,
+                            connectivity and technical troubleshooting.
+                        </p>
+
+                        <ul>
+                            <li>Network Operations and Core Network support</li>
+                            <li>IP networking, transmission and connectivity troubleshooting</li>
+                            <li>RF/RAN exposure through network site upgrade projects</li>
+                            <li>Fiber, satellite and telecommunications infrastructure</li>
+                            <li>Network monitoring, incident coordination and fault analysis</li>
+                            <li>IT Support and Helpdesk</li>
+                            <li>Website Development</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="team-qualifications">
+
+                        <h4><i class="fas fa-graduation-cap"></i> Academic Qualifications</h4>
+
+                        <ul>
+                            <li>
+                                <i class="fas fa-award"></i>
+                                Bachelor in Information Technology- Southern Cross University (Cybersecurity &amp; AI)
+                            </li>
+
+                            <li>
+                                <i class="fas fa-award"></i>
+                                Diploma in Information and Communication
+                                Technology – Don Bosco Technological Institute
+                            </li>
+
+                            <li>
+                                <i class="fas fa-book-open"></i>
+                                Advanced Professional Diploma in Information
+                                Technology – Datec
+                            </li>
+                        </ul>
+
+                        <h4><i class="fas fa-certificate"></i> Professional Development</h4>
+
+                        <ul>
+                            <li>
+                                <i class="fas fa-network-wired"></i>
+                                Cisco CCNA 200-301
+                            </li>
+                        </ul>
+
+                        <h4><i class="fas fa-laptop-code"></i> Technical Competencies</h4>
+
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>IP Networking and Network Operations</li>
+                            <li><i class="fas fa-check-circle"></i>RF/RAN, LTE and 5G Fundamentals</li>
+                            <li><i class="fas fa-check-circle"></i>Core Network and Transmission</li>
+                            <li><i class="fas fa-check-circle"></i>Fiber and Satellite Connectivity</li>
+                            <li><i class="fas fa-check-circle"></i>Network Monitoring and Troubleshooting</li>
+                        </ul>
+
+                    </div>
+
+                </details>
+
+            </div>
+
+
+            <!-- =====================================
+                 MEMBER 3: DOCUMENT SERVICES & MEDIA
+            ===================================== -->
+
+            <div class="team-card">
+
+                <div class="team-avatar-placeholder">
+                    <img src="team-image/team-admin.png"
+                         alt="Ms. Michelle Auamoromoro"
+                         loading="lazy">
+                </div>
+
+                <h3>Ms. Michelle Auamoromoro</h3>
+
+                <span class="team-role">Document Services &amp; Media</span>
+
+                <p class="team-bio">
+                    Coordinates documentation services, professional
+                    typing, document formatting, layout preparation,
+                    printing workflows and training administration.
+                    Supports consistent service delivery and efficient
+                    customer workflows.
+                </p>
+
+                <!-- Add verified LinkedIn URL in href when available -->
+                <div class="team-linkedin">
+                    <a href="https://www.linkedin.com/in/michelle-auamoromoro-3b00a2201/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    </a>
+                </div>
+
+                <div class="team-focus">
+
+                    <strong>Operations Focus</strong>
+
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i>General news writing and reporting (excluding sports)</li>
+                        <li><i class="fas fa-check-circle"></i>Business and SME success story development</li>
+                        <li><i class="fas fa-check-circle"></i>Website management and content updates</li>
+                        <li><i class="fas fa-check-circle"></i>Livestreaming and event coverage</li>
+						<li><i class="fas fa-check-circle"></i>Video shooting, production and editing</li>
+						<li><i class="fas fa-check-circle"></i>Official Facebook page administration and content publishing</li>
+						<li><i class="fas fa-check-circle"></i>Digital media and public engagement management</li>
+                    </ul>
+
+                </div>
+
+                <details class="team-experience">
+
+                    <summary>
+                        <span>
+                            <i class="fas fa-briefcase"></i>
+                            Professional Experience
+                        </span>
+                        <span class="experience-toggle"></span>
+                    </summary>
+
+                    <div class="team-experience-content">
+
+                        <p>
+                            Experienced journalist with a background in reporting, feature writing,
+							court reporting, video production, and digital media management. Completed
+							internships with Post-Courier and EMTV before joining The National, where I worked 
+							across general news, court reporting, and magazine features. I also managed website and
+							social media content. Currently serving as Media Officer at the Ministry of International Trade and Investment.
+                        </p>
+
+                        <ul>
+                            <li>Write and report on general news stories, excluding sports coverage.</li>
+                            <li>Produce business success stories, highlighting entrepreneurs, business owners and SME achievements.</li>
+                            <li>Manage and update the company's official website.</li>
+							<li>Coordinate and operate livestreaming for company events and activities.</li>
+							<li>Shoot, produce and edit video content for news coverage and digital platforms.</li>
+							<li>Administer and manage the company's official Facebook page.</li>
+							<li>Create and publish engaging multimedia content to strengthen the company's online presence and public engagement.</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="team-qualifications">
+
+                        <h4><i class="fas fa-graduation-cap"></i> Academic Qualifications</h4>
+
+                        <ul>
+                            <li>
+                                <i class="fas fa-award"></i>
+                                Bachelor's Degree, Communication Arts (Journalism) –
+                                Divine Word University
+                            </li>
+
+                            <li>
+                                <i class="fas fa-award"></i>
+                                Bachelor's Degree, Business in Management –
+                                University of Papua New Guinea
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </details>
+
+            </div>
+
+
+            <!-- =====================================
+                 MEMBER 4: SALES & MARKETING
+            ===================================== -->
+
+            <div class="team-card">
+
+                <div class="team-avatar-placeholder">
+                    <img src="team-image/sales-marketing.png"
+                         alt="Mr. Kelly Sauveni"
+                         loading="lazy">
+                </div>
+
+                <h3>Mr. Kelly Sauveni</h3>
+
+                <span class="team-role">Sales &amp; Marketing</span>
+
+                <p class="team-bio">
+                    Supports sales growth, brand development, marketing
+                    campaigns, customer acquisition and promotional
+                    activities. Builds client relationships and helps
+                    connect customers with suitable technology and
+                    business solutions.
+                </p>
+
+                <!-- Add verified LinkedIn URL in href when available -->
+                <div class="team-linkedin">
+                    <a href="#"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    </a>
+                </div>
+
+                <div class="team-focus">
+
+                    <strong>Business Development Focus</strong>
+
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i>Sales and customer engagement</li>
+                        <li><i class="fas fa-check-circle"></i>Marketing and promotions</li>
+                        <li><i class="fas fa-check-circle"></i>Brand development</li>
+                        <li><i class="fas fa-check-circle"></i>Client relationship management</li>
+                    </ul>
+
+                </div>
+
+                <details class="team-experience">
+
+                    <summary>
+                        <span>
+                            <i class="fas fa-briefcase"></i>
+                            Professional Experience
+                        </span>
+                        <span class="experience-toggle"></span>
+                    </summary>
+
+                    <div class="team-experience-content">
+
+                        <p>
+                            Brings over five years of experience as a Sales
+                            Representative across various companies, with
+                            practical exposure to customer engagement,
+                            sales activities and client relationship building.
+                        </p>
+
+                        <ul>
+                            <li>Sales representation and customer acquisition</li>
+                            <li>Customer engagement and product promotion</li>
+                            <li>Client relationship development</li>
+                            <li>Sales support and business development activities</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="team-qualifications">
+
+                        <h4><i class="fas fa-graduation-cap"></i> Qualifications</h4>
+
+                        <ul>
+                            <li>
+                                <i class="fas fa-award"></i>
+                                Certificate in Sales –
+                                International Training Institute (ITI)
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </details>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     WHY CLIENTS TRUST OUR TEAM
+===================================== -->
+
+<section class="trust-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="small-heading">OUR COMMITMENT</span>
+
+            <h2>Why Clients Trust Our Team</h2>
+
+            <p>
+                We focus on dependable service, practical solutions and
+                professional customer support to help clients get the
+                most out of their technology.
+            </p>
+
+        </div>
+
+        <div class="trust-grid">
+
+            <div class="trust-card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Local PNG-Based Support</h3>
+                <p>
+                    Local understanding and service delivery for
+                    Papua New Guinean homes and businesses.
+                </p>
+            </div>
+
+            <div class="trust-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Responsive Assistance</h3>
+                <p>
+                    Practical support and clear communication
+                    when customers need technical assistance.
+                </p>
+            </div>
+
+            <div class="trust-card">
+                <i class="fas fa-tools"></i>
+                <h3>Technical Capability</h3>
+                <p>
+                    Support across IT equipment, networks,
+                    connectivity, installations and troubleshooting.
+                </p>
+            </div>
+
+            <div class="trust-card">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h3>Affordable Solutions</h3>
+                <p>
+                    Practical service options designed around
+                    customer needs and budgets.
+                </p>
+            </div>
+
+            <div class="trust-card">
+                <i class="fas fa-users"></i>
+                <h3>Personalised Service</h3>
+                <p>
+                    We take time to understand each customer's
+                    requirements and recommend suitable solutions.
+                </p>
+            </div>
+
+            <div class="trust-card">
+                <i class="fas fa-building"></i>
+                <h3>Business &amp; Home Solutions</h3>
+                <p>
+                    Technology services for individuals,
+                    households, offices and organisations.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     TECHNOLOGY NEWS & INSIGHTS
+===================================== -->
+
+<section class="corporate-reviews-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="small-heading">KNOWLEDGE &amp; UPDATES</span>
+
+            <h2>Technology News &amp; Insights</h2>
+
+            <p>
+                Stay informed with technology developments,
+                product updates, cybersecurity awareness and
+                practical digital guidance.
+            </p>
+
+        </div>
+
+        <div class="reviews-grid">
+
+            <div class="review-card">
+
+                <div class="blog-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+
+                <h3>Weekly Tech Trends &amp; Product Updates</h3>
+
+                <p>
+                    Explore the latest technology trends, featured
+                    products and new arrivals. From Dell laptops
+                    and MacBook devices to iPhones, smartphones,
+                    accessories and smart gadgets, we highlight
+                    product specifications, key features, pricing
+                    updates and practical buying considerations.
+                </p>
+
+                <div class="blog-update">
+                    <strong>Content Update: Every Friday</strong>
+                    <span>Technology Products &amp; Consumer Electronics</span>
+                </div>
+
+            </div>
+
+            <div class="review-card">
+
+                <div class="blog-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+
+                <h3>Monthly Cybersecurity Alerts &amp; Awareness</h3>
+
+                <p>
+                    Stay aware of emerging cyber threats, phishing
+                    attempts, malware risks, data protection practices
+                    and security updates. Share practical guidance
+                    to help individuals and businesses protect
+                    their devices, accounts and digital information.
+                </p>
+
+                <div class="blog-update">
+                    <strong>Content Update: End of Every Month</strong>
+                    <span>Cybersecurity, Data Protection &amp; Digital Safety</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     CONTACT CALL TO ACTION
+===================================== -->
+
+<section class="team-final-cta">
+
+    <div class="container">
+
+        <h2>Need IT Support, Printing Services or a New Website?</h2>
+
+        <p>
+            Whether you need technical support, CCTV installation,
+            Starlink connectivity, professional printing, document
+            services or a business website, Simple Tech Services
+            is ready to assist.
+        </p>
+
+        <a href="index.html#contact">
+            Get a Quote
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer class="main-footer">
+
+    <div class="footer-bottom">
+
+        <p>
+            &copy; 2026 Simple Tech Services PNG. All Rights Reserved.
+        </p>
+
+        <p class="developer-credit">
+            Designed &amp; Developed by
+            <a href="#" target="_blank" rel="noopener noreferrer">
+                Niugini Tech
+            </a>
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

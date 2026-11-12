@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Services | Simple Tech Services PNG</title>
+
+    <meta name="description" content="Explore Simple Tech Services PNG's IT support, CCTV installation, Starlink installation, PTP configuration, networking, cybersecurity, website design, document preparation, printing, training and business productivity services.">
+
+    <link rel="stylesheet" href="style.css?v=1.7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* SERVICES PAGE */
+        .services-page-bg {
+            background-color: #f4f7f9;
+            padding: 60px 0;
+        }
+
+        .services-intro {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 45px;
+        }
+
+        .services-intro h2 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .services-intro p {
+            font-size: 1rem;
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        /* SERVICE GRID */
+        .precise-services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        /* SERVICE CARD */
+        .grid-service-card {
+            background-color: var(--white, #ffffff);
+            border-top: 5px solid var(--secondary-blue);
+            padding: 35px 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            height: 100%;
+        }
+
+        .grid-service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-icon-container {
+            font-size: 2.2rem;
+            margin-bottom: 22px;
+            line-height: 1;
+            color: var(--secondary-blue);
+        }
+
+        .grid-service-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark-charcoal);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+            line-height: 1.4;
+        }
+
+        .image-styled-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px;
+            flex-grow: 1;
+        }
+
+        .image-styled-list li {
+            font-size: 0.94rem;
+            color: #4a5568;
+            margin-bottom: 14px;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .image-styled-list li::before {
+            content: "•";
+            color: #a0aec0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.1rem;
+        }
+
+        /* SERVICE CALL TO ACTION */
+        .service-cta {
+            margin-top: auto;
+            padding-top: 22px;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .service-cta p {
+            color: #52677E;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .service-cta a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            background-color: var(--primary-blue);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+            padding: 12px 17px;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .service-cta a:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        .service-cta a i {
+            font-size: 0.8rem;
+        }
+
+        /* GENERAL QUOTE SECTION */
+        .services-final-cta {
+            background-color: var(--primary-blue);
+            padding: 55px 20px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .services-final-cta h2 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .services-final-cta p {
+            color: #E2E8F0;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            line-height: 1.7;
+        }
+
+        .services-final-cta a {
+            display: inline-block;
+            background-color: var(--kumul-gold);
+            color: #172B3A;
+            text-decoration: none;
+            padding: 13px 25px;
+            font-weight: 800;
+            border-radius: 4px;
+            transition: opacity 0.3s ease;
+        }
+
+        .services-final-cta a:hover {
+            opacity: 0.88;
+        }
+
+        /* BUSINESS EXPERIENCE, SERVICE AREAS AND CLIENT TYPES */
+        .services-support-sections {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 55px;
+        }
+
+        .services-info-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
+        }
+
+        .services-info-card h2 {
+            color: var(--primary-blue);
+            font-size: 1.35rem;
+            margin: 0 0 20px;
+        }
+
+        .services-check-list,
+        .services-area-list,
+        .services-client-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 13px;
+        }
+
+        .services-check-list li,
+        .services-area-list li,
+        .services-client-list li {
+            color: #475569;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .services-check-list li i {
+            color: #16a34a;
+            margin-top: 5px;
+        }
+
+        .services-area-list,
+        .services-client-list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 18px;
+        }
+
+        .services-area-list li i,
+        .services-client-list li i {
+            color: var(--secondary-blue);
+            margin-top: 5px;
+            width: 16px;
+            flex: 0 0 16px;
+        }
+
+        .services-contact-section {
+            background: #f4f7f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .services-contact-section h2 {
+            color: var(--primary-blue);
+            font-size: 1.7rem;
+            margin: 0 0 12px;
+        }
+
+        .services-contact-section > .container > p {
+            color: #52677e;
+            margin: 0 auto 25px;
+            line-height: 1.7;
+        }
+
+        .services-contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px 28px;
+            margin: 0 auto;
+        }
+
+        .services-contact-details a,
+        .services-contact-details span {
+            color: var(--dark-charcoal);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            line-height: 1.6;
+        }
+
+        .services-contact-details i {
+            color: var(--secondary-blue);
+        }
+
+        .services-contact-details a:hover {
+            color: var(--secondary-blue);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .precise-services-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .precise-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-service-card {
+                padding: 32px 25px;
+            }
+
+            .services-intro h2,
+            .services-final-cta h2 {
+                font-size: 1.5rem;
+            }
+
+            .services-final-cta {
+                padding: 45px 20px;
+            }
+
+            .services-support-sections {
+                grid-template-columns: 1fr;
+                margin-top: 40px;
+            }
+
+            .services-info-card {
+                padding: 25px 22px;
+            }
+
+            .services-area-list,
+            .services-client-list {
+                grid-template-columns: 1fr;
+            }
+
+            .services-contact-details {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER / NAVIGATION -->
+<header class="navbar">
+    <div class="container nav-container">
+
+        <div class="logo">
+            <a href="index.html" style="display:flex; align-items:center;">
+                <img src="sts-logo.png"
+                     alt="Simple Tech Services Logo"
+                     class="nav-logo-img">
+            </a>
+        </div>
+
+        <div class="logo">
+            Simple<span class="text-gold">Tech</span>Services
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="index.html#why-choose-us">Why Choose Us</a>
+            <a href="testimonials.html">Our Team</a>
+            <a href="shop.html">Store</a>
+            <a href="index.html#contact" class="btn-nav">Get a Quote</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- PAGE HEADER -->
+<section class="page-header-section"
+         style="background-color:#eaf4fb; border-bottom:1px solid #E2E8F0; padding:35px 0;">
+
+    <div class="container">
+
+        <span class="small-heading">WHAT WE DO</span>
+
+        <h1 style="font-size:2.4rem; color:var(--primary-blue); margin-top:10px;">
+            Our Services
+        </h1>
+
+        <div class="accent-line-left"></div>
+
+    </div>
+
+</section>
+
+
+<!-- MAIN SERVICES SECTION -->
+<section class="services-page-bg">
+
+    <div class="container" style="padding:0; width:90%;">
+
+        <!-- INTRODUCTION -->
+        <div class="services-intro">
+
+            <h2>Technology Solutions That Work for You</h2>
+
+            <p>
+                From professional IT support and network infrastructure
+                to CCTV, Starlink installation, website development, document and printing
+                services, cybersecurity and business productivity, Simple Tech Services delivers practical
+                technology solutions to individuals and businesses
+                throughout Papua New Guinea.
+            </p>
+
+        </div>
+
+
+        <!-- SERVICES GRID -->
+        <div class="precise-services-grid">
+
+
+            <!-- 1. END-USER SUPPORT -->
+            <div class="grid-service-card">
+
+                <div class="card-icon-container">💻</div>
+
+                <h3>End-User Support &amp; Helpdesk</h3>
+
+                <ul class="image-styled-list">
+                    <li>Desktop Support &amp; General IT Support</li>
+                    <li>Email &amp; Account Management (Setup &amp; Configuration)</li>
+                    <li>Password resets &amp; user access management</li>
+                    <li>Printer &amp;  hardware troubleshooting</li>
+                    <li>Remote support &amp; urgent onsite technical assistance</li>
+                </ul>
+
+                <div class="service-cta">
+
+                    <p>
+                        Need reliable IT support or technical assistance
+                        for your office or business?
+                    </p>
+
+                    <a href="index.html#contact">
+                        Request a Free Quote
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 2. CONNECTIVITY & INSTALLATION -->
+            <div class="grid-service-card">
+
+                <div class="card-icon-container">📡</div>
+
+                <h3>Connectivity &amp; Installation Services</h3>
+
+                <ul class="image-styled-list">
+                    <li>
+                        <strong>CCTV Installation &amp; Configuration:</strong>
+                        Surveillance system setup, camera deployment and monitoring.
+                    </li>
+
+                    <li>
+                        <strong>Starlink Installation &amp; Support:</strong>
+                        Dish installation, connectivity setup and network configuration.
+                    </li>
+
+                    <li>
+                        <strong>Point-to-Point (PTP) Wireless Link:</strong>
+                        Point-to-Point link setup, alignment and configuration.
+                    </li>
+                </ul>
+
+                <div class="service-cta">
+
+                    <p>
+                        Need CCTV, Starlink or PTP installation
+                        and configuration services?
+                    </p>
+
+                    <a href="index.html#contact">
+                        Request a Free Quote
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 3. INFRASTRUCTURE SERVICES -->
+            <div class="grid-service-card">
+
+                <div class="card-icon-container">🌐</div>
+
+                <h3>Infrastructure Services</h3>
+
+                <ul class="image-styled-list">
+                    <li>Network setup &amp; maintenance (LAN, WAN, VPN)</li>
+                    <li>Server installation &amp; hardware management</li>
+                    <li>Data centre Infrastructure Planning &amp; Management</li>
+                    <li>IT procurement (PCs, printers, routers, etc.)</li>
+                    <li>Secure and reliable business connectivity solutions</li>
+                </ul>
+
+                <div class="service-cta">
+
+                    <p>
+                        Planning a network upgrade, server installation
+                        or office infrastructure setup?
+                    </p>
+
+                    <a href="index.html#contact">
+                        Request a Free Quote
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 4. CYBERSECURITY SERVICES -->
+            <div class="grid-service-card">
+
+                <div class="card-icon-container">🛡️</div>
+
+                <h3>Cybersecurity Services</h3>
+
+                <ul class="image-styled-list">
+                    <li>Corporate firewall &amp; antivirus management</li>
+                    <li>Intrusion detection &amp; threat prevention systems</li>
+                    <li>Data encryption standards</li>
+                    <li>User access control protocols</li>
+                </ul>
+
+                <div class="service-cta">
+
+                    <p>
+                        Looking to strengthen your business security
+                        and protect your digital assets?
+                    </p>
+
+                    <a href="index.html#contact">
+                        Request a Free Quote
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 5. TRAINING & ENABLEMENT -->
+            <div class="grid-service-card">
+
+                <div class="card-icon-container">📖</div>
+
+                <h3>Training &amp; Enablement</h3>
+
+                <ul class="image-styled-list">
+                    <li>Basic IT literacy training for individuals &amp; youths</li>
+                    <li>Corporate cybersecurity awareness programs</li>
+                    <li>Software systems standard navigation training</li>
+                    <li>Technical onboarding for office applications</li>
+                </ul>
+
+                <div class="service-cta">
+
+                    <p>
+                        Need professional IT training or digital skills
+                        development for your team?
+                    </p>
+
+                    <a href="index.html#contact">
+                        Request a Free Quote
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 6. BUSINESS PRODUCTIVITY -->
+            <div class="grid-service-card">
+
+                <div class="card-icon-container">📊</div>
+
+                <h3>Business Productivity</h3>
+
+                <ul class="image-styled-list">
+                    <li>Advanced spreadsheet &amp; data macro design</li>
+                    <li>Digital workspace efficiency training</li>
+                    <li>Automated administrative task templates</li>
+                    <li>Document typing, professional formatting &amp; layouts</li>
+                </ul>
+
+                <div class="service-cta">
+
+                    <p>
+                        Want to improve office workflows, documentation
+                        and business productivity?
+                    </p>
+
+                    <a href="index.html#contact">
+                        Request a Free Quote
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 7. WEBSITE DESIGN & DEVELOPMENT -->
+            <div class="grid-service-card">
+
+                <div class="card-icon-container">🌍</div>
+
+                <h3>Website Design &amp; Development</h3>
+
+                <ul class="image-styled-list">
+                    <li>Professional business website design and development</li>
+                    <li>Mobile-friendly and responsive website layouts</li>
+                    <li>Website updates, maintenance and content management</li>
+                    <li>Business landing pages and online presence setup</li>
+                    <li>Website deployment and hosting assistance</li>
+                </ul>
+
+                <div class="service-cta">
+
+                    <p>
+                        Ready to establish or improve your business
+                        presence online?
+                    </p>
+
+                    <a href="index.html#contact">
+                        Request a Free Quote
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 8. DOCUMENT & PRINTING SERVICES -->
+            <div class="grid-service-card">
+
+                <div class="card-icon-container">🖨️</div>
+
+                <h3>Document &amp; Printing Services</h3>
+
+                <ul class="image-styled-list">
+                    <li>Typing Services</li>
+                    <li>CV Preparation</li>
+                    <li>Assignment Printing</li>
+                    <li>Binding</li>
+                    <li>Photocopying</li>
+                    <li>Laminating</li>
+                    <li>Business Document Formatting</li>
+                </ul>
+
+                <div class="service-cta">
+
+                    <p>
+                        Need help preparing, printing or finishing
+                        professional documents?
+                    </p>
+
+                    <a href="index.html#contact">
+                        Request a Free Quote
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUSINESS EXPERIENCE, SERVICE AREAS AND CLIENT TYPES -->
+        <div class="services-support-sections">
+
+            <div class="services-info-card">
+                <h2>Why Businesses Choose Simple Tech Services</h2>
+                <ul class="services-check-list">
+                    <li><i class="fas fa-check-circle"></i> PNG-Based Technical Support</li>
+                    <li><i class="fas fa-check-circle"></i> Fast Response Times</li>
+                    <li><i class="fas fa-check-circle"></i> Certified IT Professionals</li>
+                    <li><i class="fas fa-check-circle"></i> Enterprise &amp; Small Business Solutions</li>
+                    <li><i class="fas fa-check-circle"></i> Nationwide Deployment Capability</li>
+                    <li><i class="fas fa-check-circle"></i> Remote &amp; Onsite Support</li>
+                </ul>
+            </div>
+
+            <div class="services-info-card">
+                <h2>Our Service Areas</h2>
+                <ul class="services-area-list">
+                    <li><i class="fas fa-location-dot"></i> Port Moresby</li>
+                    <li><i class="fas fa-location-dot"></i> Central Province</li>
+                    <li><i class="fas fa-location-dot"></i> Lae</li>
+                    <li><i class="fas fa-location-dot"></i> Mt Hagen</li>
+                    <li><i class="fas fa-location-dot"></i> Kokopo</li>
+                    <li><i class="fas fa-globe"></i> Nationwide Remote Support</li>
+                </ul>
+            </div>
+
+            <div class="services-info-card">
+                <h2>Who We Serve</h2>
+                <ul class="services-client-list">
+                    <li><i class="fas fa-briefcase"></i> Small Businesses</li>
+                    <li><i class="fas fa-building"></i> Government Offices</li>
+                    <li><i class="fas fa-school"></i> Schools &amp; Educational Institutions</li>
+                    <li><i class="fas fa-hands-helping"></i> NGOs</li>
+                    <li><i class="fas fa-store"></i> Retail Businesses</li>
+                    <li><i class="fas fa-city"></i> Corporate Enterprises</li>
+                    <li><i class="fas fa-house"></i> Home Users</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FINAL CALL TO ACTION -->
+<section class="services-final-cta">
+
+    <div class="container">
+
+        <h2>Let's Get Your Technology Working for You</h2>
+
+        <p>
+            Whether you need IT support, CCTV installation,
+            Starlink connectivity, networking or professional
+            technology solutions, Simple Tech Services is ready
+            to assist.
+        </p>
+
+        <a href="index.html#contact">
+            Get a Quote Today
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES PAGE CONTACT INFORMATION -->
+<section class="services-contact-section">
+    <div class="container">
+        <h2>Contact Simple Tech Services</h2>
+        <p>Get in touch to discuss your IT requirements, request technical assistance or arrange a service.</p>
+
+        <div class="services-contact-details">
+            <a href="tel:+67574348744">
+                <i class="fas fa-phone"></i>
+                Call: +675 7434 8744
+            </a>
+
+            <a href="mailto:Simpletechservices01@gmail.com">
+                <i class="fas fa-envelope"></i>
+                Email: Simpletechservices01@gmail.com
+            </a>
+
+           <span>
+				<i class="fas fa-location-dot"></i>
+				Location:
+				<a href="https://www.google.com/maps/search/?api=1&query=Suite+27%2C+Jub+Business+Centre%2C+Hohola%2C+NCD%2C+Papua+New+Guinea"
+				   target="_blank"
+				   rel="noopener noreferrer">
+					Suite 27, Jub Business Centre, Hohola, NCD
+				</a>
+         </span>
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="main-footer">
+
+    <div class="footer-bottom">
+
+        <p>
+            &copy; 2026 Simple Tech Services PNG. All Rights Reserved.
+        </p>
+
+        <p class="developer-credit">
+            Designed &amp; Developed by
+            <a href="#" target="_blank" rel="noopener noreferrer">
+                Niugini Tech
+            </a>
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- FLOATING SOCIAL MEDIA MENU -->
+<div class="floating-social-menu">
+
+    <div class="social-options" id="socialOptions">
+
+        <!-- WHATSAPP -->
+        <a href="https://wa.me/67574348744"
+           class="social-link whatsapp-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="WhatsApp">
+
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+
+        </a>
+
+        <!-- FACEBOOK -->
+        <a href="https://www.facebook.com/people/Simple-Tech-Service/100063812241906/"
+           class="social-link facebook-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Facebook">
+
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+
+        </a>
+
+        <!-- TIKTOK -->
+        <a href="https://www.tiktok.com/@simple.tech62?_r=1&_t=ZS-9BA2haCKew6"
+           class="social-link tiktok-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="TikTok">
+
+            <i class="fab fa-tiktok"></i>
+            <span>TikTok</span>
+
+        </a>
+
+    </div>
+
+    <!-- FLOATING TOGGLE BUTTON -->
+    <button type="button"
+            class="social-toggle"
+            id="socialToggle"
+            aria-label="Open social media links"
+            aria-expanded="false">
+
+        <i class="fas fa-share-alt"></i>
+
+    </button>
+
+</div>
+
+
+<!-- WEBSITE JAVASCRIPT -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

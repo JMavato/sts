@@ -1,0 +1,3 @@
+NOTE
+
+The contact form is created using Forms Spree, later add the actual email for sts to receive the customer email regarding the assistance

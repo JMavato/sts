@@ -1,0 +1,1447 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Shop | Simple Tech Services PNG</title>
+    <meta name="description" content="Browse laptops, smartphones, networking equipment, CCTV and Starlink products at Simple Tech Services PNG, Port Moresby.">
+
+    <link rel="stylesheet" href="style.css?v=1.7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* Store improvements */
+        .shop-trust {
+            padding: 35px 0;
+            background: #f4f7fa;
+        }
+
+        .shop-trust h2,
+        .shop-warranty h2 {
+            color: #0B3C5D;
+            margin-bottom: 18px;
+        }
+
+        .trust-grid,
+        .warranty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .trust-item,
+        .warranty-item {
+            background: #fff;
+            border: 1px solid #e1e7ed;
+            border-radius: 9px;
+            padding: 17px;
+        }
+
+        .trust-item i {
+            color: #D9B310;
+            margin-right: 7px;
+        }
+
+        .shop-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .shop-filter button {
+            border: 1px solid #0B3C5D;
+            border-radius: 25px;
+            padding: 9px 17px;
+            background: white;
+            color: #0B3C5D;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .shop-filter button.active,
+        .shop-filter button:hover {
+            background: #0B3C5D;
+            color: white;
+        }
+
+        .product-card[hidden] {
+            display: none !important;
+        }
+
+        .product-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin: 10px 0;
+        }
+
+        .product-badge {
+            display: inline-block;
+            padding: 5px 9px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .condition-new {
+            background: #e2f5e9;
+            color: #18743a;
+        }
+
+        .condition-refurbished {
+            background: #fff3cd;
+            color: #805b00;
+        }
+
+        .condition-exlease {
+            background: #e2efff;
+            color: #17569a;
+        }
+
+        .condition-clearance {
+            background: #fde8e7;
+            color: #a52b24;
+        }
+
+        /* Green availability badge */
+        .stock-confirm,
+        .stock-available {
+            background: #dff5e5;
+            color: #137333;
+            border: 1px solid #b7e4c3;
+        }
+
+        .product-short-description {
+            min-height: 42px;
+        }
+
+        .product-key-features {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .product-key-features li::before {
+            content: "✓";
+            color: #218348;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .product-details-button {
+            border: 1px solid #328CC1;
+            background: white;
+            color: #0B3C5D;
+            padding: 9px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 8px 0 14px;
+            font-weight: 600;
+        }
+
+        .product-details-button:hover {
+            background: #eaf4fa;
+        }
+
+        .product-details-extra {
+            display: none;
+            color: #465363;
+            font-size: 13px;
+            line-height: 1.7;
+            padding: 12px;
+            background: #f4f7fa;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .product-details-extra.open {
+            display: block;
+        }
+
+        .shop-warranty {
+            padding: 35px 0;
+            background: #fff;
+        }
+
+        .warranty-item h3 {
+            color: #0B3C5D;
+            font-size: 15px;
+            margin-top: 0;
+        }
+
+        .warranty-item p {
+            margin-bottom: 0;
+            color: #465363;
+            font-size: 13px;
+        }
+
+        .shop-trust p,
+        .shop-warranty p {
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .shop-filter button {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER / NAVIGATION -->
+<header class="navbar">
+    <div class="container nav-container">
+        <div class="logo">
+            <a href="index.html" style="display:flex; align-items:center;">
+                <img src="sts-logo.png"
+                     alt="Simple Tech Services Logo"
+                     class="nav-logo-img">
+            </a>
+        </div>
+
+        <div class="logo">
+            Simple<span class="text-gold">Tech</span>Services
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#why-choose-us">Why Choose Us</a>
+            <a href="testimonials.html">Our Team</a>
+            <a href="shop.html" class="active">Store</a>
+            <a href="index.html#contact" class="btn-nav">Get a Quote</a>
+        </nav>
+    </div>
+</header>
+
+<!-- FLOATING CART -->
+<button type="button" id="viewCartBtn" class="floating-cart">
+    <span class="cart-icon">🛒</span>
+    <span>Cart</span>
+    <span id="cartCount" class="cart-count">0</span>
+</button>
+
+<!-- PAGE HEADING -->
+<section class="page-header-section"
+         style="background-color:#eaf4fb; border-bottom:1px solid #E2E8F0; padding:35px 0;">
+    <div class="container">
+        <span class="small-heading">HARDWARE SALES & DEPLOYMENT</span>
+        <h1 style="font-size:2.4rem; color:var(--primary-blue); margin-top:10px;">Shop at SimpleTechServices</h1>
+        <div class="accent-line-left"></div>
+    </div>
+</section>
+
+<!-- FEATURED WHATSAPP SHOPPING BANNER -->
+<section class="container">
+    <div class="shop-featured-banner">
+        <div>
+            <span class="featured-label">Simple Tech Services</span>
+            <h2>Your Technology. Our Solution.</h2>
+            <p>
+                Shop laptops, smartphones, CCTV, Starlink and networking
+                solutions. Contact our team for product availability,
+                pricing and orders across Papua New Guinea.
+            </p>
+        </div>
+
+        <a
+            href="https://wa.me/67574348744?text=Hi%20Simple%20Tech%20Services%20PNG%2C%20I%27m%20interested%20in%20purchasing%20a%20product.%20Could%20you%20please%20assist%20me%3F"
+            class="shop-whatsapp-buy"
+            target="_blank"
+            rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            Send Message
+        </a>
+    </div>
+</section>
+
+<!-- WHY BUY FROM US -->
+<section class="shop-trust">
+    <div class="container">
+        <h2>Why Buy From Simple Tech Services?</h2>
+        <div class="trust-grid">
+            <div class="trust-item"><i class="fas fa-check-circle"></i> PNG-Based Support</div>
+            <div class="trust-item"><i class="fas fa-check-circle"></i> Tested Before Delivery</div>
+            <div class="trust-item"><i class="fas fa-check-circle"></i> Technical Assistance Available</div>
+            <div class="trust-item"><i class="fas fa-check-circle"></i> Nationwide Shipping</div>
+            <div class="trust-item"><i class="fas fa-check-circle"></i> Business & Home Solutions</div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCT CATALOGUE -->
+<section class="shop-page-section">
+    <div class="container">
+
+        <div class="shop-filter" aria-label="Filter products by category">
+            <button class="active" type="button" data-filter="all">All Products</button>
+            <button type="button" data-filter="laptops">Laptops</button>
+            <button type="button" data-filter="smartphones">Smartphones</button>
+            <button type="button" data-filter="networking">Networking</button>
+            <button type="button" data-filter="cctv">CCTV</button>
+            <button type="button" data-filter="starlink">Starlink</button>
+            <button type="button" data-filter="accessories">Accessories</button>
+        </div>
+
+        <div class="shop-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card" data-category="laptops">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-gold">Special Promo</span>
+                        <img src="shop-image/shop-laptop-i5.jpg"
+                             alt="Intel Core i5 Dell touchscreen laptop"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>Intel Core i5 Touch Screen DELL Laptop</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-refurbished">Refurbished</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        Business laptop with touchscreen functionality for everyday work and administration.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>Intel Core i5-5300U processor</li>
+                        <li>8GB RAM</li>
+                        <li>64-bit operating system</li>
+                        <li>Touchscreen display</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        This laptop has been described as fully inspected. Contact us to confirm its exact
+                        configuration, battery condition, storage capacity and availability before purchase.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">
+                        K2,200 <span class="price-modifier-suffix">O.N.O.</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="Intel Core i5 Touch Screen DELL Laptop"
+                                data-price="2200">Add to Cart</button>
+                        <button class="btn-pay" type="button"
+                                data-buy="Intel Core i5 Touch Screen DELL Laptop"
+                                data-price="2200">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card" data-category="smartphones">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-gold">Best Value</span>
+                        <img src="shop-image/iphone12promax.jpg"
+                             alt="Apple iPhone 12 Pro Max"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>iPhone 12 Pro Max</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-new">Brand New</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        Apple's 6.7-inch flagship smartphone with an advanced triple-camera system and 5G connectivity.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>6.7-inch Super Retina XDR OLED display</li>
+                        <li>A14 Bionic processor</li>
+                        <li>Triple 12MP camera system</li>
+                        <li>Face ID and MagSafe</li>
+                        <li>5G support</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        Storage options originally listed: 128GB, 256GB and 512GB.
+                        Confirm the available storage, battery health, device condition and included accessories
+                        before purchasing.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">Contact For Price</div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="iPhone 12 Pro Max"
+                                data-price="">Add to Cart</button>
+                        <a href="index.html#contact" class="btn-pay">Request Price</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card" data-category="laptops">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-red">Clearance</span>
+                        <img src="shop-image/applemacbook-air.jpg"
+                             alt="Apple MacBook Air Mid 2012"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>Apple MacBook Air Core i5 13-inch (Mid-2012)</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-clearance">Clearance</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        Compact 13-inch MacBook Air for basic computing, study and everyday productivity.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>Intel Core i5 1.8GHz processor</li>
+                        <li>4GB onboard RAM</li>
+                        <li>13-inch display</li>
+                        <li>Flash storage</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        The supplied specifications identify an Ivy Bridge Intel Core i5 processor and 4GB
+                        onboard 1600MHz DDR3L memory. The memory is not upgradeable. Please confirm the
+                        actual storage capacity before purchase.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">
+                        K1,300 <span class="price-modifier-suffix">Fixed</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="Apple MacBook Air Core i5 Mid-2012"
+                                data-price="1300">Add to Cart</button>
+                        <button class="btn-pay" type="button"
+                                data-buy="Apple MacBook Air Core i5 Mid-2012"
+                                data-price="1300">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 4 -->
+            <div class="product-card" data-category="laptops">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-red">Clearance</span>
+                        <img src="shop-image/macbookpro.webp"
+                             alt="Apple MacBook Pro"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>MacBook Pro Powered by macOS Monterey</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-clearance">Clearance</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        Apple MacBook Pro with Retina display, Intel processor and SSD storage.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>13.3-inch Retina display</li>
+                        <li>Intel Core i5 processor</li>
+                        <li>16GB RAM</li>
+                        <li>Intel Iris Graphics 6100</li>
+                        <li>SSD storage options</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        The supplied listing includes Thunderbolt 2, USB 3, HDMI, SDXC card slot and
+                        3.5mm headphone jack. Exact processor, memory, storage and model year should be
+                        confirmed for the available unit.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">
+                        K2,000 <span class="price-modifier-suffix">Fixed</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="MacBook Pro Powered by macOS Monterey"
+                                data-price="2000">Add to Cart</button>
+                        <button class="btn-pay" type="button"
+                                data-buy="MacBook Pro Powered by macOS Monterey"
+                                data-price="2000">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 5 -->
+            <div class="product-card" data-category="laptops">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-red">Clearance</span>
+                        <img src="shop-image/hpelitebooki5.jpeg"
+                             alt="HP EliteBook Core i5 laptop"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>HP EliteBook Core i5</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-clearance">Clearance</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        HP EliteBook business laptop designed for professional and everyday computing.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>Intel Core i5 processor - exact generation to confirm</li>
+                        <li>DDR4 memory</li>
+                        <li>PCIe NVMe SSD storage</li>
+                        <li>Intel integrated graphics</li>
+                        <li>USB and USB-C connectivity</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        The original listing contains conflicting generation details: the title says 8th Gen,
+                        while the description refers to EliteBook 800 G8 and 11th Gen processors.
+                        Confirm the exact model and processor before publishing final specifications.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">
+                        K2,450.00 <span class="price-modifier-suffix">Fixed</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="HP EliteBook Core i5"
+                                data-price="2450">Add to Cart</button>
+                        <button class="btn-pay" type="button"
+                                data-buy="HP EliteBook Core i5"
+                                data-price="2450">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 6 -->
+            <div class="product-card" data-category="cctv">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-gold">Best Value</span>
+                        <img src="shop-image/solarcamera.webp"
+                             alt="Solar security camera"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>Solar Security Camera</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-new">Brand New</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        Solar-powered security camera designed for locations where convenient power access is limited.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>Solar-powered operation</li>
+                        <li>Cellular connectivity - confirm supported network</li>
+                        <li>SIM data plan required</li>
+                        <li>Suitable for remote locations</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        The original listing refers to a 4G solar camera. Confirm supported PNG mobile
+                        networks, SIM requirements, memory options and included solar accessories before purchase.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">
+                        K880.00 <span class="price-modifier-suffix">Fixed</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="Solar Security Camera"
+                                data-price="880">Add to Cart</button>
+                        <button class="btn-pay" type="button"
+                                data-buy="Solar Security Camera"
+                                data-price="880">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 7 -->
+            <div class="product-card" data-category="cctv">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-gold">Best Value</span>
+                        <img src="shop-image/topocamera.webp"
+                             alt="TP-Link Tapo C200 Smart Security Camera"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>TP-Link Tapo C200 Smart Security Camera</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-new">Brand New</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        Indoor 1080p Wi-Fi security camera with pan-and-tilt viewing and two-way audio.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>1080p Full HD video</li>
+                        <li>360° horizontal pan and 114° vertical tilt</li>
+                        <li>Night vision</li>
+                        <li>Two-way audio</li>
+                        <li>microSD card storage support</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        Supports app-based monitoring and device sharing. The original listing also mentions
+                        voice-assistant compatibility and privacy mode. Confirm the supplied accessories and
+                        supported memory card capacity for the actual unit.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">Contact For Price</div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="TP-Link Tapo C200 Smart Security Camera"
+                                data-price="">Add to Cart</button>
+                        <a href="index.html#contact" class="btn-pay">Request Price</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 8 -->
+            <div class="product-card" data-category="laptops">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-gold">Best Value</span>
+                        <img src="shop-image/delllatitude7320.jpg"
+                             alt="Dell Latitude 7320 2-in-1 detachable laptop"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>Dell Latitude 7320 2-in-1 Detachable</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-refurbished">Refurbished</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        Premium 2-in-1 detachable laptop with touchscreen, 16GB RAM and included Active Pen.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>Intel Core i7-1180G7 processor</li>
+                        <li>16GB RAM</li>
+                        <li>256GB SSD</li>
+                        <li>13.3-inch WUXGA touchscreen</li>
+                        <li>Windows 11 Professional</li>
+                        <li>Active Pen included</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        The original listing describes a refurbished Dell Latitude 7320 2-in-1 detachable
+                        device. Confirm whether the advertised price and availability apply to one unit or
+                        a bulk pack before ordering.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">
+                        K3,800.00 <span class="price-modifier-suffix">Fixed</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="Dell Latitude 7320 2-in-1 Detachable"
+                                data-price="3800">Add to Cart</button>
+                        <button class="btn-pay" type="button"
+                                data-buy="Dell Latitude 7320 2-in-1 Detachable"
+                                data-price="3800">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 9 -->
+            <div class="product-card" data-category="laptops">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-gold">Best Value</span>
+                        <img src="shop-image/macbookprom4po.jpg"
+                             alt="Apple MacBook Pro M4 Pro"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>Apple MacBook Pro M4 Pro</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-new">Brand New</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        High-performance MacBook Pro with Apple's M4 family of processors and Retina display technology.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>14.2-inch display</li>
+                        <li>Apple M4 Pro processor</li>
+                        <li>Memory configuration to confirm</li>
+                        <li>SSD storage configuration to confirm</li>
+                        <li>12MP Centre Stage camera listed</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        The original listing includes multiple processor, RAM and storage configurations.
+                        Confirm the exact M4 Pro configuration, operating system, ports and warranty
+                        applicable to the advertised unit.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">
+                        K11,000.00 <span class="price-modifier-suffix">Fixed</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="Apple MacBook Pro M4 Pro"
+                                data-price="11000">Add to Cart</button>
+                        <button class="btn-pay" type="button"
+                                data-buy="Apple MacBook Pro M4 Pro"
+                                data-price="11000">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 10 -->
+            <div class="product-card" data-category="starlink networking">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-gold">Best Value</span>
+                        <img src="shop-image/starlinkminikit.webp"
+                             alt="Starlink Mini Kit"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>Starlink Mini Kit</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-new">Brand New</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        Compact portable satellite internet kit for remote work, travel and off-grid connectivity.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>Compact portable satellite terminal</li>
+                        <li>Built-in Wi-Fi router</li>
+                        <li>Low Earth Orbit satellite connectivity</li>
+                        <li>App-based setup and monitoring</li>
+                        <li>Portable design for field use</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        Starlink Mini offers a compact satellite internet solution. Power requirements,
+                        network performance and service availability depend on the equipment, subscription
+                        and location. Coverage: Works throughout Papua New Guinea and all regions supported
+                        by Starlink services. Check current service availability before purchase.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">
+                        K2,600.00 <span class="price-modifier-suffix">Fixed</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="Starlink Mini Kit"
+                                data-price="2600">Add to Cart</button>
+                        <button class="btn-pay" type="button"
+                                data-buy="Starlink Mini Kit"
+                                data-price="2600">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 11 -->
+            <div class="product-card" data-category="starlink networking">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-gold">Best Value</span>
+                        <img src="shop-image/starlinkstandardkit.jpg"
+                             alt="Starlink Standard Kit"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>Starlink Standard Kit</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-new">Brand New</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        Standard satellite internet kit designed for high-speed connectivity at home and in remote locations.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>Electronic phased-array satellite dish</li>
+                        <li>Low Earth Orbit satellite internet</li>
+                        <li>Wi-Fi 6 router listed</li>
+                        <li>Ethernet connectivity</li>
+                        <li>Starlink app support</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        The original listing describes a Gen 3 Standard Kit with an additional 150-foot cable.
+                        Confirm the exact kit contents, router model, cable length and service availability
+                        before purchase.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">
+                        K3,300.00 <span class="price-modifier-suffix">Fixed</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="Starlink Standard Kit"
+                                data-price="3300">Add to Cart</button>
+                        <button class="btn-pay" type="button"
+                                data-buy="Starlink Standard Kit"
+                                data-price="3300">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 12 -->
+            <div class="product-card" data-category="starlink networking">
+                <div class="product-info-wrap">
+                    <div class="product-media-container">
+                        <span class="promo-tag-gold">Best Value</span>
+                        <img src="shop-image/starlinkbusinesskit.jpg"
+                             alt="Starlink Business Kit"
+                             class="product-media-img">
+                    </div>
+
+                    <h3>Starlink Business Kit</h3>
+
+                    <div class="product-badges">
+                        <span class="product-badge condition-new">Brand New</span>
+                        <span class="product-badge stock-available">Available</span>
+                    </div>
+
+                    <p class="product-short-description">
+                        High-performance satellite connectivity solution for business and demanding deployments.
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ul class="product-key-features">
+                        <li>Flat high-performance satellite dish</li>
+                        <li>Priority service options subject to plan</li>
+                        <li>Business connectivity applications</li>
+                        <li>Enterprise network integration options</li>
+                        <li>Starlink app support</li>
+                    </ul>
+
+                    <button class="product-details-button" type="button">View Details</button>
+                    <div class="product-details-extra">
+                        The original listing describes a high-performance business terminal for corporate,
+                        field and maritime applications. Confirm the exact hardware model, supported mobility,
+                        subscription plan, service eligibility and included accessories before purchase.
+                    </div>
+                </div>
+
+                <div class="product-action-wrap">
+                    <div class="product-price-label">
+                        K13,500.00 <span class="price-modifier-suffix">Fixed</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-cart" type="button"
+                                data-name="Starlink Business Kit"
+                                data-price="13500">Add to Cart</button>
+                        <button class="btn-pay" type="button"
+                                data-buy="Starlink Business Kit"
+                                data-price="13500">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WARRANTY INFORMATION -->
+<section class="shop-warranty">
+    <div class="container">
+        <h2>Warranty & Customer Assurance</h2>
+        <div class="warranty-grid">
+            <div class="warranty-item">
+                <h3>Laptops</h3>
+                <p>30 Days Hardware Warranty</p>
+            </div>
+            <div class="warranty-item">
+                <h3>CCTV Equipment</h3>
+                <p>6 Months Warranty</p>
+            </div>
+            <div class="warranty-item">
+                <h3>Starlink Kits</h3>
+                <p>Manufacturer Warranty</p>
+            </div>
+            <div class="warranty-item">
+                <h3>Accessories</h3>
+                <p>7 Days Replacement</p>
+            </div>
+        </div>
+        <p class="checkout-note">
+            Warranty and replacement terms are subject to product eligibility and the applicable
+            purchase conditions. Please confirm coverage with us before ordering.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT US -->
+<section class="about-contact-section">
+    <div class="container">
+        <span class="small-heading">GET IN TOUCH</span>
+        <h2>Contact Simple Tech Services</h2>
+
+        <p class="about-contact-intro">
+            Have a question, need technical support, or looking for professional IT services?
+            Our team is ready to assist. Contact us through the details below or visit our office.
+        </p>
+
+        <div class="about-contact-grid">
+
+            <div class="about-contact-card">
+                <h3><i class="fas fa-map-marker-alt"></i> Office Address</h3>
+                <p>
+                    Suite 27, Jub Business Centre,<br>
+                    Frangipani Street, Hohola,<br>
+                    National Capital District,<br>
+                    Papua New Guinea.
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Jub+Business+Centre+Frangipani+Street+Hohola+Port+Moresby"
+                   target="_blank" rel="noopener noreferrer">
+                    View Office Location on Google Maps
+                </a>
+            </div>
+
+            <div class="about-contact-card">
+                <h3><i class="fas fa-phone-alt"></i> Phone & WhatsApp</h3>
+                <p>Speak directly with our team.</p>
+                <a href="tel:+67574348744">+675 7434 8744</a><br>
+                <a href="https://wa.me/67574348744"
+                   target="_blank" rel="noopener noreferrer">
+                    Chat with us on WhatsApp
+                </a>
+            </div>
+
+            <div class="about-contact-card">
+                <h3><i class="fas fa-envelope"></i> Email Address</h3>
+                <p>Send us your enquiries, service requests and business proposals.</p>
+                <a href="mailto:Simpletechservices01@gmail.com">
+                    Simpletechservices01@gmail.com
+                </a>
+            </div>
+
+            <div class="about-contact-card">
+                <h3><i class="fas fa-mail-bulk"></i> Postal Address</h3>
+                <p>
+                    P.O. Box 2663,<br>
+                    Vision City,<br>
+                    National Capital District,<br>
+                    Papua New Guinea.
+                </p>
+            </div>
+
+            <div class="about-contact-card">
+                <h3><i class="fab fa-facebook"></i> Facebook</h3>
+                <p>Follow our official business page for updates, services and announcements.</p>
+                <a href="https://www.facebook.com/people/Simple-Tech-Service/100063812241906/"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit Our Facebook Page
+                </a>
+            </div>
+
+        </div>
+
+        <div class="about-contact-cta">
+            <a href="index.html#contact" class="btn btn-primary">
+                Request a Service or Quote
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="footer-bottom">
+        <p>&copy; 2026 Simple Tech Services PNG. All Rights Reserved.</p>
+        <p class="developer-credit">
+            Designed &amp; Developed by
+            <a href="#" target="_blank" rel="noopener noreferrer">Niugini Tech</a>
+        </p>
+    </div>
+</footer>
+
+<!-- FLOATING SOCIAL MEDIA MENU -->
+<div class="floating-social-menu">
+    <div class="social-options" id="socialOptions">
+        <a href="https://wa.me/67574348744"
+           class="social-link whatsapp-link"
+           target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+        </a>
+
+        <a href="https://www.facebook.com/people/Simple-Tech-Service/100063812241906/"
+           class="social-link facebook-link"
+           target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i><span>Facebook</span>
+        </a>
+
+        <a href="https://www.tiktok.com/@simple.tech62?_r=1&_t=ZS-9BA2haCKew6"
+           class="social-link tiktok-link"
+           target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i><span>TikTok</span>
+        </a>
+    </div>
+
+    <button type="button"
+            class="social-toggle"
+            id="socialToggle"
+            aria-label="Open social media links"
+            aria-expanded="false">
+        <i class="fas fa-share-alt"></i>
+    </button>
+</div>
+
+<!-- SHOPPING CART MODAL -->
+<div class="cart-modal" id="cartModal" aria-hidden="true">
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+
+        <div class="cart-head">
+            <h2 id="cartTitle">Your Shopping Cart</h2>
+            <button class="cart-close" type="button" id="closeCartBtn"
+                    aria-label="Close cart">&times;</button>
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-total" id="cartTotal">Total: K0.00</div>
+
+        <div class="bsp-payment-box">
+            <div class="bsp-brand">
+                <span class="bsp-logo">BSP SECURE PAYMENT</span>
+                <div class="card-brands" aria-label="Card types to be confirmed with BSP">
+                    <span class="card-brand">VISA</span>
+                    <span class="card-brand">Mastercard</span>
+                    <span class="card-brand">DEBIT</span>
+                    <span class="card-brand">CREDIT</span>
+                </div>
+            </div>
+
+            <p class="checkout-note">
+                Pay securely through BSP's hosted payment page. Visa and Mastercard debit/credit
+                acceptance, including overseas cards, is subject to your approved BSP merchant facility.
+            </p>
+        </div>
+
+        <button class="btn-pay btn-bsp-checkout" type="button" id="payNowBtn">
+            Continue to BSP Secure Checkout
+        </button>
+
+        <p class="checkout-note" id="paymentStatus">
+            BSP gateway connection pending merchant approval and API credentials.
+            No card details are collected or stored on this website.
+        </p>
+    </div>
+</div>
+
+<!-- PAYMENT FEEDBACK POPUP -->
+<div class="payment-notice-modal" id="paymentNoticeModal" aria-hidden="true">
+    <div class="payment-notice-card"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="paymentNoticeTitle"
+         aria-describedby="paymentNoticeMessage">
+
+        <button type="button" class="payment-notice-close"
+                id="paymentNoticeClose" aria-label="Close message">&times;</button>
+
+        <div class="payment-notice-icon" id="paymentNoticeIcon">
+            <i class="fas fa-lock"></i>
+        </div>
+
+        <h2 id="paymentNoticeTitle">Checkout information</h2>
+        <p id="paymentNoticeMessage"></p>
+
+        <div class="payment-notice-reference" id="paymentNoticeDetails">
+            Your cart remains available. No payment has been taken.
+        </div>
+
+        <div class="payment-notice-actions">
+            <button type="button" class="payment-notice-primary"
+                    id="paymentNoticeOk">Continue Shopping</button>
+            <a href="https://wa.me/67574348744"
+               target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i>&nbsp; Contact Us
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+(() => {
+    "use strict";
+
+    const cart = [];
+
+    const modal = document.getElementById("cartModal");
+    const itemsEl = document.getElementById("cartItems");
+    const countEl = document.getElementById("cartCount");
+    const totalEl = document.getElementById("cartTotal");
+    const payButton = document.getElementById("payNowBtn");
+    const paymentStatus = document.getElementById("paymentStatus");
+
+    const money = value =>
+        "K" + Number(value).toLocaleString("en-PG", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+    // PRODUCT CATEGORY FILTERS
+    document.querySelectorAll(".shop-filter button").forEach(button => {
+        button.addEventListener("click", () => {
+            document.querySelectorAll(".shop-filter button")
+                .forEach(item => item.classList.remove("active"));
+
+            button.classList.add("active");
+
+            const filter = button.dataset.filter;
+
+            document.querySelectorAll(".product-card").forEach(card => {
+                const categories = (card.dataset.category || "").split(" ");
+                card.hidden = filter !== "all" && !categories.includes(filter);
+            });
+        });
+    });
+
+    // VIEW DETAILS TOGGLE
+    document.querySelectorAll(".product-details-button").forEach(button => {
+        button.addEventListener("click", () => {
+            const details = button.nextElementSibling;
+            const isOpen = details.classList.toggle("open");
+
+            button.textContent = isOpen ? "Hide Details" : "View Details";
+            button.setAttribute("aria-expanded", String(isOpen));
+        });
+    });
+
+    // PAYMENT NOTICE POPUP
+    const paymentNotice = document.getElementById("paymentNoticeModal");
+
+    function showPaymentNotice(title, message, details, iconClass = "fa-lock") {
+        document.getElementById("paymentNoticeTitle").textContent = title;
+        document.getElementById("paymentNoticeMessage").textContent = message;
+        document.getElementById("paymentNoticeDetails").textContent = details;
+
+        document.getElementById("paymentNoticeIcon").innerHTML =
+            '<i class="fas ' + iconClass + '"></i>';
+
+        paymentNotice.classList.add("is-visible");
+        paymentNotice.setAttribute("aria-hidden", "false");
+        document.getElementById("paymentNoticeOk").focus();
+    }
+
+    function closePaymentNotice() {
+        paymentNotice.classList.remove("is-visible");
+        paymentNotice.setAttribute("aria-hidden", "true");
+    }
+
+    document.getElementById("paymentNoticeClose")
+        .addEventListener("click", closePaymentNotice);
+
+    document.getElementById("paymentNoticeOk")
+        .addEventListener("click", closePaymentNotice);
+
+    paymentNotice.addEventListener("click", event => {
+        if (event.target === paymentNotice) closePaymentNotice();
+    });
+
+    // CART RENDERING
+    function renderCart() {
+        countEl.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+
+        if (!cart.length) {
+            itemsEl.innerHTML =
+                '<p class="cart-empty">Your cart is empty. Add a product to get started.</p>';
+            totalEl.textContent = "Total: K0.00";
+            return;
+        }
+
+        itemsEl.innerHTML = cart.map((item, index) => `
+            <div class="cart-line">
+                <div>
+                    <strong>${escapeHTML(item.name)}</strong>
+                    <small>
+                        ${item.price === null
+                            ? "Price to be confirmed"
+                            : money(item.price) + " each"}
+                    </small>
+                </div>
+                <div>
+                    <button type="button" data-minus="${index}"
+                            aria-label="Decrease quantity">−</button>
+                    <strong>${item.qty}</strong>
+                    <button type="button" data-plus="${index}"
+                            aria-label="Increase quantity">+</button>
+                    <button type="button" data-remove="${index}"
+                            aria-label="Remove item">✕</button>
+                </div>
+            </div>
+        `).join("");
+
+        const knownTotal = cart.reduce((sum, item) =>
+            sum + (item.price === null ? 0 : item.price * item.qty), 0);
+
+        const hasUnpriced = cart.some(item => item.price === null);
+
+        totalEl.textContent = "Total: " + money(knownTotal) +
+            (hasUnpriced ? " + price to be confirmed" : "");
+    }
+
+    function escapeHTML(value) {
+        return String(value).replace(/[&<>"']/g, character => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        })[character]);
+    }
+
+    function openCart() {
+        renderCart();
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeCart() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+    }
+
+    function addItem(name, price) {
+        const found = cart.find(item => item.name === name);
+
+        if (found) {
+            found.qty++;
+        } else {
+            cart.push({
+                name,
+                price: price === "" ? null : Number(price),
+                qty: 1
+            });
+        }
+
+        renderCart();
+    }
+
+    // ADD TO CART BUTTONS
+    document.querySelectorAll(".btn-cart").forEach(button => {
+        button.addEventListener("click", () => {
+            addItem(button.dataset.name, button.dataset.price);
+
+            const originalText = button.textContent;
+            button.textContent = "Added ✓";
+
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 1200);
+        });
+    });
+
+    // PAY NOW PRODUCT BUTTONS
+    document.querySelectorAll("[data-buy]").forEach(button => {
+        button.addEventListener("click", () => {
+            addItem(button.dataset.buy, button.dataset.price);
+            openCart();
+        });
+    });
+
+    document.getElementById("viewCartBtn")
+        .addEventListener("click", openCart);
+
+    document.getElementById("closeCartBtn")
+        .addEventListener("click", closeCart);
+
+    modal.addEventListener("click", event => {
+        if (event.target === modal) closeCart();
+    });
+
+    // CART QUANTITY AND REMOVE CONTROLS
+    itemsEl.addEventListener("click", event => {
+        const target = event.target;
+
+        if (target.dataset.plus !== undefined) {
+            cart[Number(target.dataset.plus)].qty++;
+        }
+
+        if (target.dataset.minus !== undefined) {
+            const index = Number(target.dataset.minus);
+            cart[index].qty--;
+
+            if (cart[index].qty <= 0) cart.splice(index, 1);
+        }
+
+        if (target.dataset.remove !== undefined) {
+            cart.splice(Number(target.dataset.remove), 1);
+        }
+
+        renderCart();
+    });
+
+    // BSP SECURE CHECKOUT
+    payButton.addEventListener("click", async () => {
+        if (!cart.length) {
+            showPaymentNotice(
+                "Your Cart Is Empty",
+                "Please add a product to your shopping cart before proceeding to checkout.",
+                "Browse our available products and select Add to Cart to get started.",
+                "fa-cart-shopping"
+            );
+            return;
+        }
+
+        if (cart.some(item => item.price === null)) {
+            showPaymentNotice(
+                "Price Confirmation Required",
+                "One or more items in your cart do not have a confirmed price yet.",
+                "Please contact Simple Tech Services to confirm the price before completing your order.",
+                "fa-tags"
+            );
+            return;
+        }
+
+        /*
+          The backend endpoint must:
+          1. Validate product prices against its own catalogue.
+          2. Create a BSP payment session using server-side credentials.
+          3. Return the official BSP checkout URL.
+
+          Never place BSP merchant secrets or card details in this HTML file.
+        */
+
+        payButton.disabled = true;
+        payButton.textContent = "Connecting to BSP...";
+        paymentStatus.textContent = "Connecting to the BSP payment service...";
+
+        try {
+            const response = await fetch("/api/bsp/create-session", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    currency: "PGK",
+                    items: cart.map(item => ({
+                        name: item.name,
+                        quantity: item.qty,
+                        unitPrice: item.price
+                    }))
+                })
+            });
+
+            const result = await response.json();
+
+            if (!response.ok || !result.checkoutUrl) {
+                throw new Error(
+                    result.message || "BSP checkout is not configured yet."
+                );
+            }
+
+            window.location.assign(result.checkoutUrl);
+
+        } catch (error) {
+            paymentStatus.textContent =
+                error.message || "Unable to start BSP checkout. Please try again later.";
+
+            showPaymentNotice(
+                "Online Payment Is Not Available Yet",
+                "Secure online checkout is currently being configured. No payment has been taken.",
+                "Your cart is still available. Please contact us through WhatsApp for assistance.",
+                "fa-lock"
+            );
+
+            payButton.disabled = false;
+            payButton.textContent = "Continue to BSP Secure Checkout";
+        }
+    });
+
+    // ESCAPE KEY CLOSES OPEN MODALS
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            closeCart();
+            closePaymentNotice();
+        }
+    });
+
+    renderCart();
+})();
+</script>
+
+<!-- EXISTING SITE JAVASCRIPT -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
