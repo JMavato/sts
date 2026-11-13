@@ -1,3 +1,8 @@
-NOTE
+CONTACT FORM SETUP
 
-The contact form is created using Forms Spree, later add the actual email for sts to receive the customer email regarding the assistance
+The homepage quote form submits to FormSubmit and is configured for:
+Simpletechservices01@gmail.com
+
+Before launch, the mailbox owner must submit a test inquiry and approve the FormSubmit activation email. Then verify that a real test message arrives in the inbox (and check spam). FormSubmit is a third-party service; review its terms and privacy practices before using it with customer information.
+
+The online store does not process card payments. Product order buttons send an enquiry through WhatsApp; confirm inventory, final price, payment method and delivery details directly with the customer before accepting payment.
