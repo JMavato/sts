@@ -2307,3 +2307,43 @@ padding: 30px 20px;
     margin: 12px 0 5px;
 }
 
+/* ==========================================================================
+   MOBILE & ANDROID RESPONSIVE FIXES
+   ========================================================================== */
+
+/* 1. Prevent horizontal page scrolling on narrow screens */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 2. Ensure all images and media scale within mobile viewports */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 3. Mobile Navigation & Header adaptation for Android screens */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  /* Adjust navigation links container for mobile screens */
+  .nav-links {
+    display: none; /* Toggle this if you have a JS mobile menu toggle, or stack them below */
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  /* If your mobile menu uses an active class */
+  .nav-links.active {
+    display: flex;
+  }
+}
+
