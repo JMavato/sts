@@ -140,6 +140,98 @@ body {
 }
 
 /* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+
+header {
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 85px;
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+}
+
+.brand-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  line-height: 1.2;
+}
+
+.brand-title span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--secondary-blue);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--dark-charcoal);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--secondary-blue);
+}
+
+/* Mobile & Android Responsive Menu Collapse */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 15px 0;
+    min-height: auto;
+  }
+
+  .nav-links {
+    display: none; /* Hidden by default on mobile unless toggled by JS */
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+
+/* ==========================================================================
    3. NAVIGATION HEADER MODULE
    ========================================================================== */
 .navbar {
