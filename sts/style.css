@@ -2573,3 +2573,48 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
         transition-duration: .01ms !important;
     }
 }
+
+
+/* MOBILE NAVIGATION */
+.mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    color: var(--primary);
+    font-size: 25px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 12px 15px;
+    }
+}
+
