@@ -330,6 +330,7 @@
 <body>
 
 <!-- HEADER / NAVIGATION -->
+
 <header class="navbar">
     <div class="container nav-container">
 
@@ -345,10 +346,19 @@
             Simple<span class="text-gold">Tech</span>Services
         </div>
 
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
+        <button class="mobile-menu-toggle"
+                id="mobileMenuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mainNav">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="nav-links" id="mainNav">
+            <a href="index.html" class="active">Home</a>
             <a href="about-us.html">About Us</a>
-            <a href="services.html" class="active">Services</a>
+            <a href="services.html">Services</a>
             <a href="index.html#why-choose-us">Why Choose Us</a>
             <a href="testimonials.html">Our Team</a>
             <a href="shop.html">Store</a>
@@ -357,6 +367,7 @@
 
     </div>
 </header>
+
 
 
 <!-- PAGE HEADER -->
@@ -852,6 +863,29 @@
 
 <!-- WEBSITE JAVASCRIPT -->
 <script src="js/script.js"></script>
+
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("mobileMenuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    if (!menuToggle || !mainNav) return;
+
+    menuToggle.addEventListener("click", function () {
+        const isOpen = mainNav.classList.toggle("active");
+
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+
+        menuToggle.innerHTML = isOpen
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+    });
+});
+</script>
 
 </body>
 </html>
