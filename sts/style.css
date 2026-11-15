@@ -2575,34 +2575,35 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
 }
 
 
-
-
-/* MOBILE NAVIGATION DROPDOWN FIX */
+/* Show hamburger and dropdown only on mobile */
 @media (max-width: 768px) {
-
-    .navbar {
-        position: relative;
-        z-index: 1000;
-    }
-
     .nav-container {
-        position: relative;
         display: flex;
+        flex-direction: row !important;
         flex-wrap: wrap;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
+        position: relative;
     }
 
     .mobile-menu-toggle {
-        display: flex;
+        display: inline-flex !important;
+        width: 48px;
+        height: 48px;
         align-items: center;
         justify-content: center;
-        flex-shrink: 0;
-        z-index: 1002;
+        margin-left: auto;
+        background: #0B3C5D;
+        color: #fff;
+        border: 2px solid #D9B310;
+        border-radius: 6px;
+        font-size: 27px;
+        cursor: pointer;
+        z-index: 1003;
     }
 
     .nav-links {
-        display: none;
+        display: none !important;
         position: absolute;
         top: 100%;
         left: 0;
@@ -2610,33 +2611,23 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
         width: 100%;
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
         padding: 10px 15px;
-        background: #ffffff;
-        border-top: 1px solid #e5e7eb;
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-        z-index: 1001;
+        background: #fff;
+        box-shadow: 0 8px 18px rgba(0,0,0,.15);
+        z-index: 1002;
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-links a {
         display: block;
         width: 100%;
+        margin: 0;
         padding: 13px 10px;
         color: #0B3C5D;
-        text-decoration: none;
-        border-bottom: 1px solid #eeeeee;
-    }
-
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
-
-    .nav-links .btn-nav {
-        margin-top: 8px;
-        text-align: center;
+        border-bottom: 1px solid #eee;
     }
 }
+
