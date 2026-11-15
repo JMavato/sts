@@ -139,7 +139,6 @@ body {
     margin: 15px 0 25px 0;
 }
 
-
 /* ==========================================================================
    3. NAVIGATION HEADER MODULE
    ========================================================================== */
@@ -2308,3 +2307,269 @@ padding: 30px 20px;
     margin: 12px 0 5px;
 }
 
+
+
+/* =========================================================
+   RESPONSIVE FIXES — SIMPLE TECH SERVICES PNG
+   Appended overrides; original desktop styling is retained.
+   ========================================================= */
+
+html { width: 100%; overflow-x: clip; -webkit-text-size-adjust: 100%; }
+body { min-width: 320px; width: 100%; overflow-x: clip; }
+img, video, iframe, svg { max-width: 100%; }
+img { height: auto; }
+.container { width: min(90%, 1140px); }
+button, input, select, textarea { max-width: 100%; }
+h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
+
+.nav-container {
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.nav-container > .logo:nth-child(2) {
+    margin-left: 0; /* Corrects the invalid -15x value */
+    margin-right: 20px;
+}
+.nav-links { min-width: 0; }
+
+.precise-services-grid,
+.shop-grid,
+.about-contact-grid,
+.vision-mission-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.precise-services-grid > *,
+.shop-grid > *,
+.about-contact-grid > *,
+.vision-mission-grid > *,
+.enterprise-container > * { min-width: 0; }
+
+.enterprise-container {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
+}
+.corporate-contact-form { width: 100%; min-width: 0; }
+.form-row.split-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.form-group input,
+.form-group select,
+.form-group textarea { width: 100%; min-width: 0; }
+
+@media (max-width: 1024px) {
+    .container { width: 92%; }
+    .precise-services-grid,
+    .shop-grid,
+    .vision-mission-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .about-contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .enterprise-container {
+        grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+        gap: 30px;
+    }
+    .process-pipeline-grid.steps-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .grid-service-card { padding: 35px 25px; }
+    .product-info-wrap,
+    .product-action-wrap { padding-left: 18px; padding-right: 18px; }
+}
+
+@media (max-width: 768px) {
+    .container { width: 92%; padding-top: 42px; padding-bottom: 42px; }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 14px 0;
+    }
+    .logo { display: block; margin: 0; text-align: center; }
+    .nav-logo-img { width: 66px; height: 66px; }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px 16px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .nav-links li { margin: 0; padding: 0; }
+    .nav-links a {
+        display: inline-block;
+        margin: 0;
+        padding: 7px 4px;
+        font-size: .86rem;
+    }
+    .nav-links .btn-nav { padding: 7px 11px; }
+
+    .hero-container,
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 28px;
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+    .enterprise-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+        text-align: center;
+    }
+    .hero-content { max-width: 100%; margin: 0; }
+    .hero-content h1 {
+        font-size: clamp(1.9rem, 7vw, 2.4rem);
+        line-height: 1.2;
+    }
+    .hero-content p { font-size: 1rem; }
+    .hero-pattern {
+        width: min(220px, 65vw);
+        height: min(220px, 65vw);
+    }
+
+    .about-text h2,
+    .section-header h2,
+    .team-section h2,
+    .vision-mission-heading h2 {
+        font-size: clamp(1.65rem, 6vw, 2rem);
+        line-height: 1.25;
+    }
+    .accent-line-left { margin: 15px auto 25px; }
+
+    .precise-services-grid,
+    .shop-grid,
+    .vision-mission-grid,
+    .about-contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+    .grid-service-card { padding: 30px 24px; }
+    .director-card { padding: 28px 22px; }
+    .metric-card { padding: 25px 18px; }
+
+    .process-pipeline-grid.steps-4 {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 38px;
+    }
+    .node-numeric-badge {
+        top: -20px;
+        right: 18px;
+        left: auto;
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+    }
+
+    .form-row.split-row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+    .corporate-contact-form { padding: 28px 22px; }
+    .btn { max-width: 100%; white-space: normal; }
+    .btn-secondary, .btn-whatsapp { margin-left: 0; }
+
+    .shop-page-heading h1,
+    .shop-page-heading h2 {
+        font-size: clamp(1.65rem, 6vw, 2rem);
+        line-height: 1.25;
+    }
+    .product-media-container { height: clamp(190px, 55vw, 260px); }
+    .product-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .shop-cart-bar { gap: 12px; flex-wrap: wrap; padding: 12px 4%; }
+
+    .homepage-promotion {
+        width: 92%;
+        flex-direction: column-reverse;
+        align-items: stretch;
+        text-align: center;
+        padding: 25px 18px;
+        gap: 18px;
+    }
+    .homepage-promotion h2 {
+        font-size: clamp(1.35rem, 5vw, 1.6rem);
+        line-height: 1.3;
+    }
+    .banner-price-row, .promotion-prices {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .homepage-promotion-image { width: 100%; flex: 0 1 auto; }
+    .homepage-promotion-image img { max-height: 190px; object-fit: contain; }
+
+    .shop-featured-banner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 28px 20px;
+    }
+    .shop-featured-banner h2 { font-size: 23px; }
+    .shop-whatsapp-buy { width: 100%; white-space: normal; box-sizing: border-box; }
+
+    .payment-notice-card {
+        width: 100%;
+        max-height: calc(100dvh - 32px);
+        overflow-y: auto;
+        padding: 32px 22px 24px;
+    }
+    .payment-notice-actions { flex-direction: column; }
+    .payment-notice-actions button,
+    .payment-notice-actions a { width: 100%; }
+    .footer-bottom { padding: 18px 12px; }
+}
+
+@media (max-width: 480px) {
+    .container { width: 90%; padding-top: 34px; padding-bottom: 34px; }
+    .nav-links { gap: 5px 12px; }
+    .nav-links a { font-size: .82rem; }
+    .hero-content h1 { font-size: 1.85rem; }
+
+    .grid-service-card,
+    .vision-mission-card,
+    .about-contact-card { padding: 25px 20px; }
+    .corporate-contact-form { padding: 24px 17px; }
+
+    .product-info-wrap,
+    .product-action-wrap { padding-left: 15px; padding-right: 15px; }
+    .product-card h3 { font-size: 1.08rem; }
+    .product-buttons { grid-template-columns: minmax(0, 1fr); }
+
+    .cart-modal { padding: 10px; }
+    .cart-panel { width: 100%; max-height: 90dvh; padding: 17px; }
+    .cart-line { align-items: flex-start; flex-direction: column; }
+    .bsp-brand { flex-direction: column; align-items: flex-start; }
+
+    .promotion-overlay { padding: 12px; }
+    .promotion-modal {
+        max-height: calc(100dvh - 24px);
+        overflow-y: auto;
+        border-radius: 12px;
+    }
+    .promotion-content { padding: 25px 18px; }
+    .promotion-content h2 { font-size: 22px; }
+
+    .floating-cart {
+        right: 12px;
+        bottom: 14px;
+        min-width: 0;
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+    .floating-social-menu {
+        left: 12px;
+        right: auto;
+        bottom: 14px;
+    }
+    .social-toggle { width: 48px; height: 48px; }
+    .social-link { min-width: 128px; padding: 9px 12px; font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
