@@ -14,6 +14,7 @@
 
     <!-- Universal Header Navigation -->
 
+
 <header class="navbar">
     <div class="container nav-container">
 
@@ -29,7 +30,16 @@
             Simple<span class="text-gold">Tech</span>Services
         </div>
 
-        <nav class="nav-links">
+        <button class="mobile-menu-toggle"
+                id="mobileMenuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mainNav">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="nav-links" id="mainNav">
             <a href="index.html" class="active">Home</a>
             <a href="about-us.html">About Us</a>
             <a href="services.html">Services</a>
@@ -41,6 +51,7 @@
 
     </div>
 </header>
+
 
     <!-- 1. Hero Presentational Component -->
     <section id="home" class="hero-section">
@@ -84,7 +95,7 @@
     </div>
     <div class="homepage-promotion-image">
         <img id="bannerImage" src="shop-image/applemacbook-air.jpg"
-             alt="Special promotion"
+             alt="Special promotion">
     </div>
 </section>
 
@@ -311,19 +322,18 @@
 
             <div class="form-row">
                 <div class="form-group">
-                    <label for="service-tier">Service Required</label>
                     <select id="service-tier" name="service_type" required>
-                        <option value="" disabled selected>Select a Service Area</option>
-                        <option value="helpdesk">Computer Repair</option>
-                        <option value="dev">Printing & Binding</option>
-                        <option value="infrastructure">Website Design</option>
-                        <option value="security">CCTV Installation</option>
-                        <option value="telecom">Starlink Installation</option>
-                        <option value="training">Networking</option>
-                        <option value="productivity">Cybersecutity</option>
-                        <option value="surveillance">Training Services</option>
-						<option value="surveillance">Other</option>
-                    </select>
+					    <option value="" disabled selected>Select a Service Area</option>
+					    <option value="computer-repair">Computer Repair</option>
+					    <option value="printing-binding">Printing &amp; Binding</option>
+					    <option value="website-design">Website Design</option>
+					    <option value="cctv-installation">CCTV Installation</option>
+					    <option value="starlink-installation">Starlink Installation</option>
+					    <option value="networking">Networking</option>
+					    <option value="cybersecurity">Cybersecurity</option>
+					    <option value="training-services">Training Services</option>
+					    <option value="other">Other</option>
+					</select>
                 </div>
             </div>
 
@@ -605,11 +615,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 	});
 </script>
-
-
-
-</body>
-</html>
 
 </body>
 </html>
