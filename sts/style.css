@@ -2738,4 +2738,23 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
     background-color: #D9B310 !important;
 }
 
+/* MOBILE - GET A QUOTE ACTIVE HIGHLIGHT */
+@media (max-width: 768px) {
+
+    .nav-links a.btn-nav.active-link,
+    .nav-links a.btn-nav.active-link:hover,
+    .nav-links a.btn-nav.active-link:focus,
+    .nav-links a.btn-nav.active-link:active {
+        color: #D9B310 !important;
+        background-color: rgba(217, 179, 16, 0.12) !important;
+        border: 1px solid #D9B310 !important;
+        border-left: 4px solid #D9B310 !important;
+        font-weight: 700 !important;
+    }
+
+    .nav-links a.btn-nav.active-link::after {
+        display: none;
+    }
+}
+
 
