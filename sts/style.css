@@ -2722,16 +2722,20 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
     }
 }
 
-/* Active navigation link */
-.nav-links a.active-link {
-    color: #D9B310;
-    font-weight: 700;
+/* FORCE ACTIVE NAVIGATION LINK TO KUMUL GOLD */
+.nav-links a.active-link,
+.nav-links a.active-link:visited,
+.nav-links a.active-link:hover,
+.nav-links a.active-link:focus,
+.nav-links a.active-link:active {
+    color: #D9B310 !important;
+    font-weight: 700 !important;
 }
 
-/* Subtle active indicator */
+/* Active navigation underline */
 .nav-links a.active-link::after {
-    width: 100%;
-    background-color: #D9B310;
+    width: 100% !important;
+    background-color: #D9B310 !important;
 }
 
 
