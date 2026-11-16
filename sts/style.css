@@ -2722,4 +2722,15 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
     }
 }
 
+/* Active navigation link */
+.nav-links a.active-link {
+    color: #328CC1;
+    font-weight: 700;
+}
+
+/* Optional: subtle indicator */
+.nav-links a.active-link::after {
+    width: 100%;
+}
+
 
