@@ -87,24 +87,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Restore active link when the page loads
-    const currentHash = window.location.hash;
-
-    if (currentHash === "#contact") {
-        setActiveLink(mainNav.querySelector('a[href="index.html#contact"]'));
-    } else if (currentHash === "#why-choose-us") {
-        setActiveLink(mainNav.querySelector('a[href="index.html#why-choose-us"]'));
-    } else {
-        const currentPage = window.location.pathname.split("/").pop() || "index.html";
-
-        const matchingLink = Array.from(navLinks).find(function (link) {
-            const linkUrl = new URL(link.href, window.location.href);
-            return linkUrl.pathname.split("/").pop() === currentPage &&
-                   !linkUrl.hash;
-        });
-
-        setActiveLink(matchingLink);
-    }
-
-});
 
