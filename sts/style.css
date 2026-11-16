@@ -2575,8 +2575,52 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
 }
 
 
-/* Show hamburger and dropdown only on mobile */
-@media (max-width: 768px) {
+/* =========================================================
+   SIMPLE TECH SERVICES — FINAL RESPONSIVE NAVIGATION
+   Desktop: Normal navigation, no hamburger
+   Mobile: Hamburger menu and dropdown navigation
+   ========================================================= */
+
+/* DEFAULT: HIDE HAMBURGER ON ALL SCREEN SIZES */
+.mobile-menu-toggle,
+#mobileMenuToggle {
+    display: none !important;
+}
+
+/* DESKTOP AND LAPTOP */
+@media screen and (min-width: 769px) {
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    .mobile-menu-toggle,
+    #mobileMenuToggle {
+        display: none !important;
+    }
+
+    #mainNav,
+    .nav-links {
+        display: flex !important;
+        position: static !important;
+        flex-direction: row !important;
+        align-items: center;
+        width: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .nav-links a {
+        color: #FFFFFF;
+    }
+}
+
+/* MOBILE AND ANDROID */
+@media screen and (max-width: 768px) {
     .nav-container {
         display: flex;
         flex-direction: row !important;
@@ -2586,15 +2630,17 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
         position: relative;
     }
 
-    .mobile-menu-toggle {
+    .mobile-menu-toggle,
+    #mobileMenuToggle {
         display: inline-flex !important;
-        width: 48px;
-        height: 48px;
+        visibility: visible !important;
         align-items: center;
         justify-content: center;
+        width: 48px;
+        height: 48px;
         margin-left: auto;
         background: #0B3C5D;
-        color: #fff;
+        color: #FFFFFF;
         border: 2px solid #D9B310;
         border-radius: 6px;
         font-size: 27px;
@@ -2602,6 +2648,7 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
         z-index: 1003;
     }
 
+    #mainNav,
     .nav-links {
         display: none !important;
         position: absolute;
@@ -2609,71 +2656,27 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
         left: 0;
         right: 0;
         width: 100%;
-        flex-direction: column;
+        flex-direction: column !important;
         align-items: stretch;
         padding: 10px 15px;
-        background: #fff;
-        box-shadow: 0 8px 18px rgba(0,0,0,.15);
+        background: #FFFFFF;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.15);
         z-index: 1002;
     }
 
+    #mainNav.active,
     .nav-links.active {
         display: flex !important;
     }
 
+    #mainNav a,
     .nav-links a {
         display: block;
         width: 100%;
         margin: 0;
         padding: 13px 10px;
         color: #0B3C5D;
-        border-bottom: 1px solid #eee;
-    }
-}
-
-/* HAMBURGER: MOBILE ONLY */
-
-/* Laptop and desktop screens */
-@media screen and (min-width: 769px) {
-    .mobile-menu-toggle,
-    #mobileMenuToggle {
-        display: none !important;
-        visibility: hidden !important;
-    }
-
-    #mainNav,
-    .nav-links {
-        display: flex !important;
-        position: static !important;
-        flex-direction: row !important;
-        width: auto !important;
-        visibility: visible !important;
-    }
-}
-
-/* Mobile and Android screens */
-@media screen and (max-width: 768px) {
-    .mobile-menu-toggle,
-    #mobileMenuToggle {
-        display: inline-flex !important;
-        visibility: visible !important;
-        align-items: center;
-        justify-content: center;
-        width: 48px;
-        height: 48px;
-        font-size: 27px;
-        cursor: pointer;
-    }
-
-    #mainNav,
-    .nav-links {
-        display: none !important;
-    }
-
-    #mainNav.active,
-    .nav-links.active {
-        display: flex !important;
-        flex-direction: column !important;
+        border-bottom: 1px solid #EEEEEE;
     }
 }
 
