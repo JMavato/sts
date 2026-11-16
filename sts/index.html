@@ -533,29 +533,7 @@
 </div>
 
 <script src="js/script.js"></script>
-
-	<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("mobileMenuToggle");
-    const mainNav = document.getElementById("mainNav");
-
-    if (!menuToggle || !mainNav) return;
-
-    menuToggle.addEventListener("click", function () {
-        const isOpen = mainNav.classList.toggle("active");
-
-        menuToggle.setAttribute("aria-expanded", isOpen);
-        menuToggle.setAttribute(
-            "aria-label",
-            isOpen ? "Close navigation menu" : "Open navigation menu"
-        );
-
-        menuToggle.innerHTML = isOpen
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
-    });
-});
-</script>
+	
 
 <script>
 // ========================================
