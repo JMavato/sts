@@ -2680,3 +2680,22 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
     }
 }
 
+/* BRAND LOGO ALIGNMENT */
+.nav-container .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.nav-container .logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.nav-container .nav-logo-img {
+    display: block;
+    max-width: 65px;
+    height: auto;
+}
+
