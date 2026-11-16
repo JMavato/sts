@@ -2631,3 +2631,49 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
     }
 }
 
+/* HAMBURGER: MOBILE ONLY */
+
+/* Laptop and desktop screens */
+@media screen and (min-width: 769px) {
+    .mobile-menu-toggle,
+    #mobileMenuToggle {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    #mainNav,
+    .nav-links {
+        display: flex !important;
+        position: static !important;
+        flex-direction: row !important;
+        width: auto !important;
+        visibility: visible !important;
+    }
+}
+
+/* Mobile and Android screens */
+@media screen and (max-width: 768px) {
+    .mobile-menu-toggle,
+    #mobileMenuToggle {
+        display: inline-flex !important;
+        visibility: visible !important;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        font-size: 27px;
+        cursor: pointer;
+    }
+
+    #mainNav,
+    .nav-links {
+        display: none !important;
+    }
+
+    #mainNav.active,
+    .nav-links.active {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
