@@ -1260,23 +1260,6 @@ padding: 30px 20px;
     }
 }
 
-/* Bring Brand Name  Simple Tech Services Closer to Logo */
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-}
-
-.nav-container > .logo:nth-child(2) {
-    margin-left: -15x;
-    margin-right: 20px;
-}
-
-.nav-links {
-    margin-left: 0;
-}
-
 /* PROMOTION POP-UP OVERLAY */
 .promotion-overlay {
     position: fixed;
@@ -2322,17 +2305,6 @@ img { height: auto; }
 button, input, select, textarea { max-width: 100%; }
 h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
 
-.nav-container {
-    min-width: 0;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.nav-container > .logo:nth-child(2) {
-    margin-left: 0; /* Corrects the invalid -15x value */
-    margin-right: 20px;
-}
-.nav-links { min-width: 0; }
-
 .precise-services-grid,
 .shop-grid,
 .about-contact-grid,
@@ -2680,31 +2652,74 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
     }
 }
 
-/* DESKTOP: KEEP LOGO IMAGE AND BUSINESS NAME SIDE BY SIDE */
-@media screen and (min-width: 769px) {
-    .nav-container > .logo {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        gap: 10px;
-        width: auto !important;
-        white-space: nowrap;
-    }
+/* =========================================
+   FINAL BRAND LOGO ALIGNMENT
+========================================= */
 
-    .nav-container > .logo > a {
-        display: flex !important;
-        flex-shrink: 0;
+.nav-container > .logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav-logo-img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    display: block;
+}
+
+.brand-name {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+}
+
+/* DESKTOP */
+@media screen and (min-width: 769px) {
+    .nav-container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
         align-items: center;
     }
 
-    .nav-container > .logo > span {
-        display: inline-block;
-        white-space: nowrap !important;
-        margin: 0;
+    .nav-container > .logo {
+        flex-direction: row;
+        white-space: nowrap;
     }
 }
 
+/* MOBILE */
+@media screen and (max-width: 768px) {
+    .nav-container > .logo {
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .nav-logo-img {
+        width: 66px;
+        height: 66px;
+    }
+
+    .brand-name {
+        font-size: 0.9rem;
+    }
+}
 
 
