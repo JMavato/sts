@@ -2757,4 +2757,21 @@ h1, h2, h3, h4, p, a, li, small, span { overflow-wrap: anywhere; }
     }
 }
 
+/* MOBILE - ACTIVE NAVIGATION LINK HIGHLIGHT */
+@media (max-width: 768px) {
+
+    .nav-links a.active-link {
+        color: #D9B310 !important;
+        background-color: rgba(217, 179, 16, 0.12) !important;
+        border-left: 4px solid #D9B310 !important;
+        font-weight: 700 !important;
+    }
+
+    .nav-links a.active-link::after {
+        display: none !important;
+    }
+}
+
+
+
 
